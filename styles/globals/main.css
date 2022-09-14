@@ -1,11 +1,11 @@
 @font-face {
     font-family: "SF-Pro";
-    src: url("../../fonts/SF-Pro.ttf");
+    src: url("../../fonts/SF-Pro.ttf") format("truetype");
 }
 
 @font-face {
-    font-family: "SF-Pro-Italic";
-    src: url("../../fonts/SF-Pro-Italic.ttf");
+    font-family: "SF-Pro";
+    src: url("../../fonts/SF-Pro-Italic.ttf") format("truetype");
 }
 
 body {
@@ -14,5 +14,5 @@ body {
 
 h1 {
     color:pink;
-    font-family: SF-Pro;
+    font-family: "SF-Pro-Italic";
 }
