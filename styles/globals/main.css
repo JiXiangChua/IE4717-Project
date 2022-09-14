@@ -9,10 +9,62 @@
 }
 
 body {
-    background-color: #141416;
+    background-color: #171719;
 }
+
 
 h1 {
     color:pink;
     font-family: "SF-Pro-Italic";
+}
+
+#wrapper {
+    min-width: 1200px;
+    max-width: 1920px;
+    background-color: #141416;
+    margin: auto;
+}
+
+.nav-container {
+    background-color: 141416;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-items {
+    display: flex;
+    justify-content: flex-end;
+    width: 50%;
+}
+
+.nav-items a {
+    color: #ffffff;
+    font-size: 14pt;
+    margin-right: 50px;
+    text-decoration: none;
+}
+
+/* link selector must be in this order: :link, :visited, :focus, :hover, :active */
+.nav-items a:hover {
+    color: #dedede;
+}
+
+.nav-items a:is(:link, :active, :visited).nav-item-active {
+    font-weight: bold;
+    background-image: -webkit-linear-gradient(#FE8C00, #F83600);
+    background-clip: unset;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#cineverse-logo {
+    width: 200px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
 }

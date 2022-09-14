@@ -4,21 +4,29 @@
 <head>
     <meta charset="utf-8">
     <title>Cineverse - Movie Tickets</title>
-    <link rel="stylesheet" href="./styles//globals/main.css">
+    <link rel="stylesheet" href="./styles/globals/main.css">
     <link rel="stylesheet" href="./styles/pages/home.css">
-    <script src="" async defer></script>
+    <script src="./scripts/globals/navBarActiveLink.js" defer></script>
+    <!-- defer means the script will run parallel when parsing the page and after it loads finish, it will execute the script -->
 </head>
 
 <body>
-    <nav>
-        <img src="./images/icons/cineverse_logo.png">
-        <a href="./pages/movies/movies.html">Movies</a>
-        <a href="./pages/cinemas/cinema.html">Cinemas</a>
-        <a href="./pages/promotions/">Promotions</a>
-        <a href="./pages/checkbooking/checkbooking.html">Check Booking</a>
-    </nav>
-    <h1>Hello World</h1>
-    <h2>This is Home page</h2>
+    <div id="wrapper">
+        <nav class="nav-container">
+            <img id="cineverse-logo" src="./images/icons/cineverse_logo.png" alt="cineverse_logo">
+            <div class="nav-items">
+                <a href="./index.html">Home</a>
+                <a href="./pages/movies/movies.html">Movies</a>
+                <a href="./pages/cinemas/cinema.html">Cinemas</a>
+                <a href="./pages/promotions/promotion.html">Promotions</a>
+                <a href="./pages/checkbooking/checkbooking.html">Check Booking</a>
+            </div>
+        </nav>
+        <div class="container">
+            <h1>Hello World</h1>
+            <h2>This is Home page</h2>
+        </div>
+    </div>
 </body>
 
 </html>
