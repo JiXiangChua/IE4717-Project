@@ -2,11 +2,12 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" content="width=device-width, initial-scale=1">
     <title>Cineverse - Cinema Listing</title>
     <link rel="stylesheet" href="../../styles/globals/main.css">
     <link rel="stylesheet" href="../../styles/pages/cinema.css">
     <script src="../../scripts/globals/navBarActiveLink.js" defer></script>
+
 </head>
 
 <body>
@@ -15,17 +16,48 @@
             <img id="cineverse-logo" src="../../images/icons/cineverse_logo.png" alt="cineverse_logo">
             <div class="nav-items">
                 <a class="active" href="../../index.html">Home</a>
-                <a href="./movies.html">Movies</a>
+                <a href="../movies/movies.html">Movies</a>
                 <a href="../cinemas/cinema.html">Cinemas</a>
                 <a href="../promotions/promotion.html">Promotions</a>
                 <a href="../checkbooking/checkbooking.html">Check Booking</a>
             </div>
         </nav>
         <div class="container">
-            <h1>Hello World</h1>
-            <h2>This is cinema page</h2>
+            <h2>Cinemas</h2>
+
+            <br>
+            <div class="slideshow">
+
+                <div class="cinema_slide">
+                    <img src="../../images/pages/cinemas/location-cinema.jpg" style="width:1400px">
+                    <div class="cinema_description">Cineverse @ Jurong East</div>
+                </div>
+
+                <div class="cinema_slide">
+                    <img src="../../images/pages/cinemas/orchard_cinema.jpg" style="width:1400px;">
+                    <div class="cinema_description">Cineverse @ Orchard</div>
+                </div>
+
+                <div class="cinema_slide">
+                    <img src="../../images/pages/cinemas/tampines_cinema.jpg" style="width:1400px;">
+                    <div class="cinema_description">Cineverse @ Tampines </div>
+                </div>
+
+                <a class="prev_button" onclick="slideAction(-1)">&#10094;</a>
+                <a class="next_button" onclick="slideAction(1)">&#10095;</a>
+            </div>
+
+            <br>
+
+            <div class="slide_indicator" style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
         </div>
     </div>
+
+    <script type="text/javascript" src="../../scripts/pages/cinema.js"></script>
 </body>
 
 </html>

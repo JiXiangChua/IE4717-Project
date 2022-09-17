@@ -1,21 +1,23 @@
 @font-face {
     font-family: "SF-Pro";
-    src: url("../../fonts/SF-Pro.ttf") format("truetype");
+    src: url("../../fonts/SF-Pro.ttf") format("truetype"),
+    url("../../fonts/SF-Pro.woff") format("woff");
 }
 
 @font-face {
-    font-family: "SF-Pro";
-    src: url("../../fonts/SF-Pro-Italic.ttf") format("truetype");
+    font-family: "SF-Pro-Italic";
+    src: url("../../fonts/SF-Pro-Italic.woff") format("woff");
 }
 
 body {
     background-color: #171719;
+    font-family: "SF-Pro";
 }
 
 
 h1 {
     color:pink;
-    font-family: "SF-Pro-Italic";
+    font-family: "SF-Pro";
 }
 
 #wrapper {
