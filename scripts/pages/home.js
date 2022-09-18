@@ -1,4 +1,5 @@
 var top5MovieCardList = document.getElementById("top5-card-list");
+var recommendedMovieCardList = document.getElementById("recommended-card-list");
 
 var top5Movies = [
   {
@@ -28,8 +29,32 @@ var top5Movies = [
   },
 ];
 
+var recommendedMovies = [
+  {
+    title: "Spider-Main: No Way Home",
+    image: "./images/pages/movies/movie-spiderman.jpg",
+  },
+  {
+    title: "DC: SuperPets",
+    image: "./images/pages/movies/movie-superpets.jpg",
+  },
+  {
+    title: "Deadpool 3",
+    image: "./images/pages/movies/movie-deadpool.png.webp",
+  },
+  {
+    title: "Nope",
+    image: "./images/pages/movies/movie-nope.jpeg",
+  },
+  {
+    title: "Moonlight",
+    image: "./images/pages/movies/movie-moonlight.jpeg",
+  },
+];
+
 const init = () => {
   renderTop5MovieCardList();
+  renderRecommendedMovieCardList();
 };
 
 const renderTop5MovieCardList = () => {
@@ -42,15 +67,25 @@ const renderTop5MovieCardList = () => {
             <div class="top5-Card">
                 <div class="rank-number">${index + 1}</div>
                 <div class="top5-movie">
-                    <img src="${movie.image}">
+                    <img src="${movie.image}" alt="${movie.title}">
                     <p>${movie.title}</p>
                 </div>
             </div>
         </div>`
     )
     .join("");
+};
 
-  console.log("Running");
+const renderRecommendedMovieCardList = () => {
+  recommendedMovieCardList.innerHTML = recommendedMovies
+    .map(
+      (movie) =>
+        `<div class="recommended-card">
+            <img src="${movie.image}" alt="${movie.title}">
+            <p>${movie.title}</p>
+        </div>`
+    )
+    .join("");
 };
 
 window.onload = init;

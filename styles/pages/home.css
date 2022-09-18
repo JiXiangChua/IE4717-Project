@@ -87,6 +87,7 @@ h1 {
 .top5-movie img {
   width: 540px;
   height: 360px;
+  border-radius: 30px;
 }
 
 .top5-movie p {
@@ -99,8 +100,27 @@ h1 {
   padding: 0px 20px;
 }
 
-.recommended-container img {
-  width: 270px;
-  height: 360px;
-  padding-right: 50px;
+#recommended-card-list {
+  display: flex;
+  padding-bottom: 20px;
+}
+
+.recommended-card {
+  width: 400px;
+  height: 520px;
+  padding: 0px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.recommended-card img {
+  width: 360px;
+  height: 480px;
+  border-radius: 30px;
+}
+
+.recommended-card p {
+  color: white;
 }
