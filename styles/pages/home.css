@@ -1,3 +1,50 @@
-h2 {
-    color:red;
+h1 {
+    font-weight: bold;
+    background-image: -webkit-linear-gradient(#FE8C00, #F83600);
+    background-clip: unset;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.top5-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 20px;
+}
+
+.horizontal-scroll-container {
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.horizontal-scroll-container:hover{
+    overflow-x: scroll;
+} 
+
+/* width */
+.horizontal-scroll-container::-webkit-scrollbar {
+    width: 100px;
+  }
+  
+  /* Track */
+  .horizontal-scroll-container::-webkit-scrollbar-track {
+    background: #151515; 
+    border-radius: 20px;
+  }
+   
+  /* Handle */
+  .horizontal-scroll-container::-webkit-scrollbar-thumb {
+    background: #212121; 
+    border-radius: 20px;
+  }
+  
+  /* Handle on hover */
+  .horizontal-scroll-container::-webkit-scrollbar-thumb:hover {
+    background: #2a2a2a; 
+  }
+
+.horizontal-scroll-container img {
+    width: 540px;
+    height: 360px;
+    padding-right: 20px;
 }
