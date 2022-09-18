@@ -6,6 +6,10 @@ h1 {
     -webkit-text-fill-color: transparent;
 }
 
+#opening-trailer {
+  width: 100%;
+}
+
 .top5-container {
     display: flex;
     flex-direction: column;
@@ -43,8 +47,20 @@ h1 {
     background: #2a2a2a; 
   }
 
-.horizontal-scroll-container img {
+.top5-container img {
     width: 540px;
     height: 360px;
     padding-right: 20px;
+}
+
+.recommended-container {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 20px;
+}
+
+.recommended-container img {
+  width: 270px;
+  height: 360px;
+  padding-right: 50px;
 }
