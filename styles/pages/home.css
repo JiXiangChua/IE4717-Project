@@ -1,9 +1,13 @@
+body {
+  margin-top: 0px;
+}
+
 h1 {
-    font-weight: bold;
-    background-image: -webkit-linear-gradient(#FE8C00, #F83600);
-    background-clip: unset;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  background-image: -webkit-linear-gradient(90deg, #fe8c00 0%, #f83600 100%);
+  background-clip: unset;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 #opening-trailer {
@@ -11,46 +15,82 @@ h1 {
 }
 
 .top5-container {
-    display: flex;
-    flex-direction: column;
-    padding: 0px 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 0px 20px;
 }
 
 .horizontal-scroll-container {
-    overflow: hidden;
-    white-space: nowrap;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
-.horizontal-scroll-container:hover{
-    overflow-x: scroll;
-} 
+.horizontal-scroll-container:hover {
+  overflow-x: scroll;
+}
 
 /* width */
 .horizontal-scroll-container::-webkit-scrollbar {
-    width: 100px;
-  }
-  
-  /* Track */
-  .horizontal-scroll-container::-webkit-scrollbar-track {
-    background: #151515; 
-    border-radius: 20px;
-  }
-   
-  /* Handle */
-  .horizontal-scroll-container::-webkit-scrollbar-thumb {
-    background: #212121; 
-    border-radius: 20px;
-  }
-  
-  /* Handle on hover */
-  .horizontal-scroll-container::-webkit-scrollbar-thumb:hover {
-    background: #2a2a2a; 
-  }
+  width: 100px;
+}
 
-.top5-container img {
-    width: 540px;
-    height: 360px;
-    padding-right: 20px;
+/* Track */
+.horizontal-scroll-container::-webkit-scrollbar-track {
+  background: #151515;
+  border-radius: 20px;
+}
+
+/* Handle */
+.horizontal-scroll-container::-webkit-scrollbar-thumb {
+  background: #212121;
+  border-radius: 20px;
+}
+
+/* Handle on hover */
+.horizontal-scroll-container::-webkit-scrollbar-thumb:hover {
+  background: #2a2a2a;
+}
+
+#top5-card-list {
+  display: flex;
+  padding-bottom: 20px;
+}
+
+.top5-Card {
+  width: 620px;
+  height: 480px;
+  padding: 0px 40px;
+  position: relative;
+}
+
+.rank-number {
+  position: absolute;
+  top: -80px;
+  left: 0px;
+  font-size: 400px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  -webkit-text-fill-color: rgb(255, 255, 255, 0.15);
+  -webkit-text-stroke-width: 8px;
+  -webkit-text-stroke-color: #fe5000;
+}
+
+.top5-movie {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.top5-movie img {
+  width: 540px;
+  height: 360px;
+}
+
+.top5-movie p {
+  color: white;
 }
 
 .recommended-container {

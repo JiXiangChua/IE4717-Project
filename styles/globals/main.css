@@ -1,7 +1,7 @@
 @font-face {
     font-family: "SF-Pro";
     src: url("../../fonts/SF-Pro.ttf") format("truetype"),
-    url("../../fonts/SF-Pro.woff") format("woff");
+        url("../../fonts/SF-Pro.woff") format("woff");
 }
 
 @font-face {
@@ -16,7 +16,7 @@ body {
 
 
 h1 {
-    color:pink;
+    color: pink;
     font-family: "SF-Pro";
 }
 
@@ -25,11 +25,12 @@ h1 {
     max-width: 1920px;
     background-color: #141416;
     margin: auto;
+    display: block;
 }
 
 .nav-container {
-    background-color: 141416;
-    padding: 10px 20px;
+    background-color: #141416;
+    padding: 10px 0px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -64,6 +65,7 @@ h1 {
 
 #cineverse-logo {
     width: 200px;
+    margin-left: 20px;
 }
 
 .container {
@@ -102,6 +104,7 @@ h1 {
     justify-content: center;
     align-items: center;
 }
+
 .link-container a {
     padding: 0px 40px;
     text-decoration: none;
