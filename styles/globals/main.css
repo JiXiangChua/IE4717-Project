@@ -1,126 +1,128 @@
+/*Global Styles*/
 @font-face {
-    font-family: "SF-Pro";
-    src: url("../../fonts/SF-Pro.ttf") format("truetype"),
-        url("../../fonts/SF-Pro.woff") format("woff");
+  font-family: "SF-Pro";
+  src: url("../../fonts/SF-Pro.ttf") format("truetype"),
+    url("../../fonts/SF-Pro.woff") format("woff");
 }
 
 @font-face {
-    font-family: "SF-Pro-Italic";
-    src: url("../../fonts/SF-Pro-Italic.woff") format("woff");
+  font-family: "SF-Pro-Italic";
+  src: url("../../fonts/SF-Pro-Italic.woff") format("woff");
 }
 
 body {
-    background-color: #171719;
-    font-family: "SF-Pro";
+  background-color: #171719;
+  font-family: "SF-Pro";
 }
-
 
 h1 {
-    color: pink;
-    font-family: "SF-Pro";
+  color: pink;
+  font-family: "SF-Pro";
 }
 
+/*Body Styles*/
+
 #wrapper {
-    min-width: 1200px;
-    max-width: 1920px;
-    background-color: #141416;
-    margin: auto;
-    display: block;
+  min-width: 1200px;
+  max-width: 1920px;
+  background-color: #141416;
+  margin: auto;
+  display: block;
 }
 
 .nav-container {
-    background-color: #141416;
-    padding: 10px 0px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+  background-color: #141416;
+  padding: 10px 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .nav-items {
-    display: flex;
-    justify-content: flex-end;
-    width: 50%;
+  display: flex;
+  justify-content: flex-end;
+  width: 50%;
 }
 
 .nav-items a {
-    color: #ffffff;
-    font-size: 14pt;
-    margin-right: 50px;
-    text-decoration: none;
+  color: #ffffff;
+  font-size: 14pt;
+  margin-right: 50px;
+  text-decoration: none;
 }
 
 /* link selector must be in this order: :link, :visited, :focus, :hover, :active */
 .nav-items a:hover {
-    color: #dedede;
+  color: #dedede;
 }
 
 .nav-items a:is(:link, :active, :visited).nav-item-active {
-    font-weight: bold;
-    background-image: -webkit-linear-gradient(#FE8C00, #F83600);
-    background-clip: unset;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  background-image: -webkit-linear-gradient(#fe8c00, #f83600);
+  background-clip: unset;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 #cineverse-logo {
-    width: 200px;
-    margin-left: 20px;
+  width: 200px;
+  margin-left: 20px;
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 /*Footer Styles*/
 
 .footer-container {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 200px;
-    margin: 50px 0px 20px 0px;
-    padding: 20px 0px;
-    border-image: -webkit-linear-gradient(#FE8C00, #F83600) 30;
-    border-top: 3px solid;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 200px;
+  margin: 50px 0px 20px 0px;
+  padding: 20px 0px;
+  border-image: -webkit-linear-gradient(#fe8c00, #f83600) 30;
+  border-top: 3px solid;
 }
 
 .footer-container #cineverse-logo {
-    width: 10%;
-    margin-left: 20px;
+  width: 10%;
+  margin-left: 20px;
 }
 
 .footer-container p {
-    font-size: 10pt;
-    font-weight: 300;
-    color: #BFBFBF;
-    text-align: center;
+  font-size: 10pt;
+  font-weight: 300;
+  color: #bfbfbf;
+  text-align: center;
 }
 
 .link-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .link-container a {
-    padding: 0px 40px;
-    text-decoration: none;
-    color: #BFBFBF;
+  padding: 0px 40px;
+  text-decoration: none;
+  color: #bfbfbf;
 }
 
 .social-media-icons {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin: 30px 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0px;
 }
 
 #social-media-icon {
-    width: 30px;
-    height: 30px;
-    padding: 0px 10px;
+  width: 30px;
+  height: 30px;
+  padding: 0px 10px;
 }
