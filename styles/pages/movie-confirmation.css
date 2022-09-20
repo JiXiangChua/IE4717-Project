@@ -1,0 +1,26 @@
+h1 {
+  font-size: 4em;
+  font-weight: bold;
+  background-image: -webkit-linear-gradient(90deg, #fe8c00 0%, #f83600 100%);
+  background-clip: unset;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+p {
+  font-size: 1.25em;
+  font-weight: 600;
+  text-align: center;
+  color: #ffffff;
+}
+
+.confirmation-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.done-button {
+  margin-top: 50px;
+}

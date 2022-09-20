@@ -1,4 +1,5 @@
 h1 {
+  font-size: 2.5em;
   font-weight: bold;
   background-image: -webkit-linear-gradient(90deg, #fe8c00 0%, #f83600 100%);
   background-clip: unset;
@@ -39,7 +40,7 @@ h1 {
 .promo-container {
   display: flex;
   flex-direction: column;
-  padding: 0px 20px;
+  padding: 30px 30px;
 }
 
 #promo-card-list {
