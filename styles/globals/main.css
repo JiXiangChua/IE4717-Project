@@ -25,6 +25,7 @@ h1 {
 #wrapper {
   min-width: 1200px;
   max-width: 1920px;
+  min-height: 1080px;
   background-color: #141416;
   margin: auto;
   display: block;
