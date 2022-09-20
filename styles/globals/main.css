@@ -78,6 +78,27 @@ h1 {
   min-height: 800px;
 }
 
+.primary-button {
+  width: 230px;
+  height: 65px;
+  font-size: 1.75em;
+  font-weight: 300;
+  background-color: #fe8c00;
+  color: #ffffff;
+  border-radius: 20px;
+  border: 2px solid #141416;
+  transition: ease-in-out 0.2s;
+}
+
+.primary-button:hover {
+  background-color: #ffffff;
+  color: #fe8c00;
+}
+
+.primary-button:active {
+  background-color: #141416;
+}
+
 .accent-button {
   width: 230px;
   height: 65px;
