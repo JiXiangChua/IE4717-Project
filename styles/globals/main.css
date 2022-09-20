@@ -83,11 +83,13 @@ h1 {
   height: 65px;
   font-size: 1.75em;
   font-weight: 300;
-  background-color: #fe8c00;
+  background-color: rgba(254, 140, 0, 0.8);
+  border: 2px solid rgba(20, 20, 22, 0.1);
+  backdrop-filter: blur(30px);
   color: #ffffff;
   border-radius: 20px;
-  border: 2px solid #141416;
   transition: ease-in-out 0.2s;
+  cursor: pointer;
 }
 
 .primary-button:hover {
@@ -104,15 +106,17 @@ h1 {
   height: 65px;
   font-size: 1.75em;
   font-weight: 300;
-  background-color: #141416;
-  color: #ffffff;
+  background-color: rgba(20, 20, 22, 0.5);
+  border: 2px solid rgba(254, 140, 0, 1);
+  backdrop-filter: blur(30px);
+  color: rgba(255, 255, 255, 1);
   border-radius: 20px;
-  border: 2px solid #fe8c00;
   transition: ease-in-out 0.2s;
+  cursor: pointer;
 }
 
 .accent-button:hover {
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 1);
   color: #fe8c00;
 }
 
