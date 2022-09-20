@@ -74,6 +74,29 @@ h1 {
 .container {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  min-height: 800px;
+}
+
+.accent-button {
+  width: 230px;
+  height: 65px;
+  font-size: 1.75em;
+  font-weight: 300;
+  background-color: #141416;
+  color: #ffffff;
+  border-radius: 20px;
+  border: 2px solid #fe8c00;
+  transition: ease-in-out 0.2s;
+}
+
+.accent-button:hover {
+  background-color: #ffffff;
+  color: #fe8c00;
+}
+
+.accent-button:active {
+  background-color: #141416;
 }
 
 /*Footer Styles*/
