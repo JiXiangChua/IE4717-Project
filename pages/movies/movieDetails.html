@@ -30,24 +30,48 @@
                     <div class="detail">
                         <p class="movie-title">1917</p>
                         <div class="movie-tags">
-                            <p>8.4</p>
-                            <p>PG13</p>
-                            <p>140 mins</p>
+                            <div class="tag-label">
+                                <img class="indicator-icon" src="../../images/icons/fa_imdb.png" alt="imdb">
+                                <p>8.4</p>
+                            </div>
+                            <div class="tag-label">
+                                <img class="indicator-icon" src="../../images/icons/fa_hd.png" alt="imdb">
+                                <p>PG13</p>
+                            </div>
+                            <div class="tag-label">
+                                <img class="indicator-icon" src="../../images/icons/fa_time.png" alt="imdb">
+                                <p>140 mins</p>
+                            </div>
                             <p>2022</p>
                         </div>
                         <p class="movie-description">1917 is a 2019 war film directed and produced by Sam Mendes, who
                             co-wrote the film with Krysty Wilson-Cairns. Partially inspired by stories told to Mendes by
-                            his paternal grandfather Alfred about his service during World War I,[6] the film takes
+                            his paternal grandfather Alfred about his service during World War I, the film takes
                             place after the German retreat to the Hindenburg Line during Operation Alberich, and follows
                             two British soldiers.</p>
-                        <a href="#time-slots">
+                        <a href="#time-slots-list">
                             <button type="button" class="accent-button book-button">Book Now</button>
                         </a>
                     </div>
                 </div>
             </div>
-            <div class="time-container" id="time-slots">
-                <p style="color: white;">Hello Timing!</p>
+            <div class="time-container" id="time-slots-list">
+                <!-- Render HTML components from javascript. Below is a skeleton of the card -->
+                <!-- <div class="location-card">
+                    <div class="location-cell">Jurong East</div>
+                    <div class="timeslot-title-cell">Time Slot</div>
+                    <div class="date-cell">
+                        <select name="date" class="date-picker">
+                            <option value="" selected>Date</option>
+                            <option value="28/02">28/02</option>
+                            <option value="29/02">29/02</option>
+                        </select>
+                    </div>
+                    <div id="timeslot-cell">
+                        <p class="timeslot-card">10:00</p>
+                        <p class="timeslot-card">10:00</p>
+                    </div>
+                </div> -->
             </div>
         </div>
         <footer class="footer-container">
@@ -65,6 +89,9 @@
             <p>&copy; COPYRIGHT 2022 IE4717 F38-DG05 | CHUA JI XIANG | TANG ZHAO SHENG </p>
         </footer>
     </div>
+    <!-- Render HTML reusable components scripts -->
+    <script type="text/javascript" src="../../components/pages/movieTimeslotCardList.js"></script>
+    <!-- <script src="../../scripts/pages/movieDetails.js"></script> -->
 </body>
 
 </html>

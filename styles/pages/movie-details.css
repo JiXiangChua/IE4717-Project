@@ -68,7 +68,21 @@ h1 {
   width: 80%;
   height: 100px;
   margin: 10px 30px;
-  background-color: blue;
+  color: #bfbfbf;
+  font-size: 1.75em;
+}
+
+.tag-label {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.indicator-icon {
+  width: 30px;
+  height: 30px;
+  padding-right: 20px;
 }
 
 .movie-description {
@@ -80,4 +94,119 @@ h1 {
 
 .book-button {
   margin-top: 100px;
+}
+
+.time-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px 10px;
+}
+
+.location-card {
+  width: 90%;
+  background-color: #1f1f1f;
+  border-radius: 30px;
+  border: 1px solid rgba(254, 140, 0, 1);
+  display: grid;
+  gap: 10px 100px; /*row gap | column gap*/
+  grid-template-columns: 200px auto;
+  grid-template-rows: 50px auto;
+  padding: 20px 30px;
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 20px 0px;
+}
+
+.location-cell {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.timeslot-title-cell {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.date-cell {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.date-picker {
+  width: 150px;
+  height: 60px;
+  color: #ffffff;
+  background-color: rgba(20, 20, 22, 0.5);
+  border: 2px solid rgba(254, 140, 0, 1);
+  backdrop-filter: blur(30px);
+  border-radius: 20px;
+  cursor: pointer;
+  padding: 15px;
+  font-size: 20px;
+  margin-top: 32px;
+  -webkit-appearance: none; /* Safari and Chrome */
+  appearance: none;
+}
+
+#timeslot-cell {
+  grid-column: 2;
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 100px);
+  /* row-gap: 10px; */
+  column-gap: 2.5em;
+}
+
+#timeslot-cell-0 {
+  /*Jurong East Timing*/
+  grid-column: 2;
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 100px);
+  /* row-gap: 10px; */
+  column-gap: 2.5em;
+}
+
+#timeslot-cell-1 {
+  /*Orchard Timing*/
+  grid-column: 2;
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 100px);
+  /* row-gap: 10px; */
+  column-gap: 2.5em;
+}
+
+#timeslot-cell-2 {
+  /*Tampines Timing*/
+  grid-column: 2;
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 100px);
+  /* row-gap: 10px; */
+  column-gap: 2.5em;
+}
+
+.timeslot-card {
+  width: 100px;
+  height: 40px;
+  padding: 10px 20px;
+  background-color: rgba(20, 20, 22, 0.5);
+  border: 2px solid rgba(254, 140, 0, 1);
+  backdrop-filter: blur(30px);
+  border-radius: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.timeslot-card:hover {
+  background-color: rgba(255, 255, 255, 1);
+  color: #fe8c00;
+}
+
+.timeslot-card:active {
+  background-color: #141416;
 }
