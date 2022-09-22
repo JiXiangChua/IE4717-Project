@@ -1,6 +1,6 @@
 
 h2 {
-    background: linear-gradient(90deg, #FE8C00 1.36%, #F83600 43.8%);
+    background: linear-gradient(90deg, #FE8C00 0%, #F83600 96.88%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -21,6 +21,10 @@ h2 {
     text-align: center;
 }
 
+.cinema_slide img{
+    width:1400px;
+}
+
 .cinema_description{
     font-family: "SF-Pro";
     color:#FE8C00;
@@ -35,15 +39,18 @@ h2 {
     user-select: none;
     color:white;
     font-size: 50px;
-    top:50%;
   }
 
   .next_button {
-    padding-left: 1280px;
+    padding-left: 1400px;
   }
 
   .prev_button:hover,.next_button:hover{
     color:#FE8C00;
+  }
+
+  .slide_indicator{
+    text-align:center;
   }
 
   .dot {
@@ -54,16 +61,16 @@ h2 {
     background-color: white;
     border-radius: 50%;
     display: inline-block;
-    transition: background-color 0.6s ease;
+    transition: background-color 0.25s ease;
   }
 
 .dot:hover{
     background-color: #FE8C00;
   }
 
-/* .active{
+.dot-active{
     background-color: #FE8C00;
-} */
+}
 
 
 

@@ -32,9 +32,13 @@ function showSlides(n) {
   }
 
   for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace("active", "");
+    // dots[i].className = dots[i].className.replace("active", "");
+    if (slideIndex == i + 1) {
+      dots[i].classList.add("dot-active");
+    } else {
+      dots[i].classList.remove("dot-active");
+    }
   }
 
   slides[slideIndex - 1].style.display = "block";
-  dots[slideIndex - 1].className += " active";
 }
