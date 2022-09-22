@@ -2,7 +2,7 @@ html {
   scroll-behavior: smooth; /*when redirect to another link, it will be a scrolling animation instead of a jump animation*/
 }
 
-.detail-container {
+#detail-container {
   width: 100%;
   height: 1080px;
   position: relative;
@@ -46,9 +46,10 @@ html {
 
 .movie-title {
   color: #ffffff;
-  font-size: 6em;
+  font-size: 4em;
   font-weight: bold;
   margin: 0px;
+  text-align: center;
 }
 
 .movie-tags {
