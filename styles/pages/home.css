@@ -2,14 +2,6 @@ body {
   margin-top: 0px;
 }
 
-h1 {
-  font-weight: bold;
-  background-image: -webkit-linear-gradient(90deg, #fe8c00 0%, #f83600 100%);
-  background-clip: unset;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 #opening-trailer {
   width: 100%;
 }
@@ -69,7 +61,7 @@ h1 {
   left: 0px;
   font-size: 400px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  -webkit-text-fill-color: rgb(255, 255, 255, 0.15);
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.071);
   -webkit-text-stroke-width: 8px;
   -webkit-text-stroke-color: #fe5000;
 }

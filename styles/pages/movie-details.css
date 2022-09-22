@@ -2,15 +2,6 @@ html {
   scroll-behavior: smooth; /*when redirect to another link, it will be a scrolling animation instead of a jump animation*/
 }
 
-h1 {
-  font-size: 2.5em;
-  font-weight: bold;
-  background-image: -webkit-linear-gradient(90deg, #fe8c00 0%, #f83600 100%);
-  background-clip: unset;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 .detail-container {
   width: 100%;
   height: 1080px;

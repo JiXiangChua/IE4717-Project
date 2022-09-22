@@ -16,8 +16,13 @@ body {
 }
 
 h1 {
-  color: pink;
-  font-family: "SF-Pro";
+  background: linear-gradient(90deg, #fe8c00 0%, #f83600 96.88%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 60px;
+  font-style: normal;
+  padding-left: 20px;
 }
 
 /*Body Styles*/
