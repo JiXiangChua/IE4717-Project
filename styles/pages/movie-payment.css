@@ -1,0 +1,349 @@
+.horizontal-scroll-container {
+  /*have to adjust some codes if bringing this scroll to main.css as I added display grid here. May affect other pages*/
+  overflow: hidden;
+  display: grid;
+  grid-auto-flow: column;
+}
+
+.horizontal-scroll-container:hover {
+  overflow-x: scroll;
+}
+
+/* width */
+.horizontal-scroll-container::-webkit-scrollbar {
+  width: 100px;
+}
+
+/* Track */
+.horizontal-scroll-container::-webkit-scrollbar-track {
+  background: #151515;
+  border-radius: 20px;
+}
+
+/* Handle */
+.horizontal-scroll-container::-webkit-scrollbar-thumb {
+  background: #212121;
+  border-radius: 20px;
+}
+
+/* Handle on hover */
+.horizontal-scroll-container::-webkit-scrollbar-thumb:hover {
+  background: #2a2a2a;
+}
+
+.ticket-container {
+  width: 90%;
+  align-self: center;
+  margin-bottom: 50px;
+}
+
+.ticket-detail-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#movie-poster {
+  width: 350px;
+  height: 550px;
+  margin: 5px 10% 10px 10px;
+  border: 6px solid #fe8c00;
+  border-radius: 30px;
+}
+
+#e-ticket {
+  position: relative;
+  width: 60%;
+  height: 400px;
+}
+
+#e-ticket img {
+  width: 100%;
+  height: 100%;
+}
+
+.e-ticket-details {
+  width: 65%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.e-ticker-header {
+  flex: 2;
+  padding: 20px 0px 0px 20px;
+}
+
+#movie-title {
+  font-size: 4em;
+  margin: 0px;
+  color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  display: block;
+  text-overflow: ellipsis;
+}
+
+#cinema-location {
+  font-size: 2em;
+  margin: 0px;
+  padding-top: 20px;
+  color: #ffffff;
+}
+
+.e-ticket-seats {
+  flex: 1;
+  padding: 0px 0px 0px 20px;
+}
+
+#movie-seat-number {
+  color: #ffffff;
+  font-size: 2em;
+}
+
+.e-tickets-datetime {
+  flex: 2;
+  padding: 0px 0px 0px 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #ffffff;
+}
+
+#movie-date {
+  font-size: 2em;
+  padding-right: 20%;
+}
+
+#movie-time {
+  font-size: 2em;
+}
+
+.snack-container {
+  width: 90%;
+  align-self: center;
+  margin-bottom: 50px;
+}
+
+#snack-list {
+  display: grid;
+  grid-auto-flow: column;
+}
+
+.snack-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 350px;
+  height: 400px;
+  margin: 0px 40px 30px 40px;
+}
+
+.snack-card img {
+  width: 340px;
+  height: 270px;
+}
+
+.snack-card p {
+  margin: 10px;
+}
+
+.snack-quantity-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  color: #141416;
+  font-size: 36px;
+}
+
+.invoice-container {
+  width: 90%;
+  align-self: center;
+  margin-bottom: 50px;
+  padding-bottom: 30px;
+}
+
+.invoce-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+tr:nth-child(2) td {
+  padding-top: 30px;
+}
+
+tr:nth-last-child(2) td {
+  padding-bottom: 30px;
+}
+
+.row-bottom-border {
+  border-bottom: 2px solid #ffffff;
+}
+
+.row-top-border {
+  border-top: 2px solid #ffffff;
+}
+
+.item-header-column,
+.qty-header-column,
+.cost-header-column {
+  height: 80px;
+  color: #ffffff;
+  text-align: center;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.item-header-column {
+  width: 70%;
+  text-align: left;
+  padding-left: 150px;
+}
+
+.qty-header-column {
+  width: 15%;
+}
+
+.cost-header-column {
+  width: 15%;
+}
+
+.item-column,
+.qty-column,
+.cost-column {
+  height: 50px;
+  text-align: center;
+  color: #ffffff;
+  font-size: 20px;
+}
+
+.item-column {
+  width: 70%;
+  text-align: left;
+  padding-left: 150px;
+}
+
+.qty-column {
+  width: 15%;
+}
+
+.cost-column {
+  width: 15%;
+}
+
+.payment-container {
+  width: 90%;
+  align-self: center;
+  margin-bottom: 50px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+#payment-form {
+  display: grid;
+  /*row gap | column gap*/
+  gap: 20px 10px;
+  width: 80%;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: auto auto;
+  align-self: center;
+}
+
+.card-holder-container,
+.card-number-container,
+.expiry-date-container,
+.cvc-container,
+.email-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-holder-container,
+.card-number-container,
+.expiry-date-container,
+.cvc-container,
+.email-container label {
+  color: #ffffff;
+  font-size: 24px;
+}
+
+.card-holder-container {
+  grid-column: 1 / span 2;
+  grid-row: 1;
+}
+
+.card-number-container {
+  grid-column: 3 / span 2;
+  grid-row: 1;
+}
+
+.expiry-date-container {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.cvc-container {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.email-container {
+  grid-column: 3 / span 2;
+  grid-row: 2;
+}
+
+#card-holder,
+#card-number,
+#expiry-date,
+#cvc,
+#email {
+  width: 80%;
+  height: 40px;
+  border: 2px solid rgba(254, 140, 0, 1);
+  border-radius: 30px;
+  background-color: transparent;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 5px 20px;
+  margin-top: 10px;
+}
+
+#cvc {
+  width: 60%;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+#expiry-date {
+  color-scheme: dark;
+}
+
+.buttons-container {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-self: center;
+  margin-top: 80px;
+}

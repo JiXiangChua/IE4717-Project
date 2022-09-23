@@ -5,13 +5,181 @@
     <meta charset="utf-8">
     <title>Cineverse - Payment</title>
     <link rel="stylesheet" href="../../styles/globals/main.css">
-    <link rel="stylesheet" href="../../styles/pages/movie.css">
-    <script src="" async defer></script>
+    <link rel="stylesheet" href="../../styles/pages/movie-payment.css">
+    <script src="../../scripts/globals/navBarActiveLink.js" defer></script>
 </head>
 
 <body>
-    <h1>Hello World</h1>
-    <h2>This is payment page</h2>
+    <div id="wrapper">
+        <nav class="nav-container">
+            <img id="cineverse-logo" src="../../images/icons/cineverse_logo.png" alt="cineverse_logo">
+            <div class="nav-items">
+                <a class="active" href="../../index.html">Home</a>
+                <a href="../movies/movies.html">Movies</a>
+                <a href="../cinemas/cinema.html">Cinemas</a>
+                <a href="../promotions/promotion.html">Promotions</a>
+                <a href="../checkbooking/checkbooking.html">Check Booking</a>
+            </div>
+        </nav>
+        <div class="container">
+            <h1>Summary</h1>
+            <div class="ticket-container">
+                <h2>Ticket</h2>
+                <div class="ticket-detail-container">
+                    <img id="movie-poster" src="../../images/pages/movies/movie-1917.jpg" alt="1917">
+                    <div id="e-ticket">
+                        <!-- e-ticket image -->
+                        <img src="../../images/pages/movies/e-ticket-template.png">
+                        <!-- overlay containing the details -->
+                        <div class="e-ticket-details">
+                            <div class="e-ticker-header">
+                                <h3 id="movie-title">1917</h3>
+                                <p id="cinema-location">Cinema: Jurong East</p>
+                            </div>
+                            <div class="e-ticket-seats">
+                                <p id="movie-seat-number">Seat: A10, A11</p>
+                            </div>
+                            <div class="e-tickets-datetime">
+                                <p id="movie-date">Date: 30 Nov</p>
+                                <p id="movie-time">Time: 13:00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="snack-container">
+                <h2>Snacks & Drinks</h2>
+                <div class="horizontal-scroll-container">
+                    <div id="snack-list">
+                        <div class="snack-card">
+                            <img src="../../images/pages/movies/beef_burger.png" alt="">
+                            <p>Combo Set A</p>
+                            <div class="snack-quantity-card">1</div>
+                        </div>
+                        <div class="snack-card">
+                            <img src="../../images/pages/movies/beef_burger.png" alt="">
+                            <p>Combo Set A</p>
+                            <div class="snack-quantity-card">1</div>
+                        </div>
+                        <div class="snack-card">
+                            <img src="../../images/pages/movies/beef_burger.png" alt="">
+                            <p>Combo Set A</p>
+                            <div class="snack-quantity-card">1</div>
+                        </div>
+                        <div class="snack-card">
+                            <img src="../../images/pages/movies/beef_burger.png" alt="">
+                            <p>Combo Set A</p>
+                            <div class="snack-quantity-card">1</div>
+                        </div>
+                        <div class="snack-card">
+                            <img src="../../images/pages/movies/beef_burger.png" alt="">
+                            <p>Combo Set A</p>
+                            <div class="snack-quantity-card">1</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="invoice-container">
+                <h2>Your Purchases</h2>
+                <table class="invoce-table">
+                    <tr class="row-bottom-border">
+                        <td class="item-header-column">
+                            Item</td>
+                        <td class="qty-header-column">Qty</td>
+                        <td class="cost-header-column">Cost</td>
+                    </tr>
+                    <tr>
+                        <td class="item-column">item 1</td>
+                        <td class="qty-column">1</td>
+                        <td class="cost-column">$10</td>
+                    </tr>
+                    <tr>
+                        <td class="item-column">item 2</td>
+                        <td class="qty-column">2</td>
+                        <td class="cost-column">$20</td>
+                    </tr>
+                    <tr>
+                        <td class="item-column">item 3</td>
+                        <td class="qty-column">3</td>
+                        <td class="cost-column">$30</td>
+                    </tr>
+                    <tr class="row-top-border">
+                        <td class="item-column"></td>
+                        <td class="qty-column">Total</td>
+                        <td class="cost-column">S$ 38.00</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="payment-container">
+                <h1>Payment</h1>
+                <form id="payment-form" method="post" action="">
+                    <div class="card-holder-container">
+                        <label for="card-holder">Card Holder</label>
+                        <input id="card-holder" name="cardHolder" class="" type="text" required>
+                    </div>
+                    <div class="card-number-container">
+                        <label for="card-number">Card Number</label>
+                        <input id="card-number" name="cardNumber" class="" type="text" required>
+                    </div>
+                    <div class="expiry-date-container">
+                        <label for="expiry-date">Expiry Date</label>
+                        <input id="expiry-date" name="expiryDate" class="" type="date" required>
+                    </div>
+                    <div class="cvc-container">
+                        <label for="cvc">CVC Number</label>
+                        <input id="cvc" name="cvc" class="" type="number" required>
+                    </div>
+                    <div class="email-container">
+                        <label for="email">Email</label>
+                        <input id="email" name="email" class="" type="email" required>
+                    </div>
+                    <!-- <div class="form-first-row">
+                        <div class="first-label-input-flex">
+                            <label for="card-holder">Card Holder</label>
+                            <input id="card-holder" name="cardHolder" class="" type="text" required>
+                        </div>
+                        <div class="first-label-input-flex">
+                            <label for="card-number">Card Number</label>
+                            <input id="card-number" name="cardNumber" class="" type="text" required>
+                        </div>
+
+                    </div>
+                    <div class="form-second-row">
+                        <div class="second-label-input-flex">
+                            <label for="expiry-date">Expiry Date</label>
+                            <input id="expiry-date" name="expiryDate" class="" type="date" required>
+                        </div>
+                        <div class="second-label-input-flex">
+                            <label for="cvc">CVC Number</label>
+                            <input id="cvc" name="cvc" class="" type="text" required>
+                        </div>
+                        <div class="first-label-input-flex">
+                            <label for="email">Email</label>
+                            <input id="email" name="email" class="" type="email" required>
+                        </div>
+                    </div> -->
+                </form>
+                <div class="buttons-container">
+                    <button class="accent-button">Back</button>
+                    <input form="payment-form" type="submit" value="Pay" class="primary-button">
+                </div>
+            </div>
+        </div>
+        <footer class="footer-container">
+            <img id="cineverse-logo" src="../../images/icons/cineverse_logo.png" alt="cineverse_logo">
+            <div class="link-container">
+                <a href="">About</a>
+                <a href="">FAQs</a>
+                <a href="">Contact Us</a>
+                <a href="">Terms of Service</a>
+            </div>
+            <div class="social-media-icons">
+                <img id="social-media-icon" src="../../images/icons/facebook-icon.png" alt="facebook-icon">
+                <img id="social-media-icon" src="../../images/icons/instagram-icon.png" alt="instagram-icon">
+            </div>
+            <p>&copy; COPYRIGHT 2022 IE4717 F38-DG05 | CHUA JI XIANG | TANG ZHAO SHENG </p>
+        </footer>
+    </div>
 </body>
 
 </html>

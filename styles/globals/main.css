@@ -25,6 +25,16 @@ h1 {
   padding-left: 20px;
 }
 
+h2 {
+  font-size: 40px;
+  color: #ffffff;
+}
+
+p {
+  color: white;
+  font-size: 24px;
+}
+
 /*Body Styles*/
 
 #wrapper {
