@@ -113,14 +113,15 @@
             </div>
             <div class="payment-container">
                 <h1>Payment</h1>
-                <form id="payment-form" method="post" action="">
+                <form id="payment-form" action="confirmation.php" method="post">
                     <div class="card-holder-container">
                         <label for="card-holder">Card Holder</label>
-                        <input id="card-holder" name="cardHolder" class="" type="text" required>
+                        <input id="card-holder" name="cardHolder" class="" type="text" placeholder="Name" required>
                     </div>
                     <div class="card-number-container">
                         <label for="card-number">Card Number</label>
-                        <input id="card-number" name="cardNumber" class="" type="text" required>
+                        <input id="card-number" name="cardNumber" class="" type="number"
+                            placeholder="Enter without '-' and space in between the numbers" required>
                     </div>
                     <div class="expiry-date-container">
                         <label for="expiry-date">Expiry Date</label>
@@ -128,11 +129,11 @@
                     </div>
                     <div class="cvc-container">
                         <label for="cvc">CVC Number</label>
-                        <input id="cvc" name="cvc" class="" type="number" required>
+                        <input id="cvc" name="cvc" class="" type="number" placeholder="CVC" required>
                     </div>
                     <div class="email-container">
                         <label for="email">Email</label>
-                        <input id="email" name="email" class="" type="email" required>
+                        <input id="email" name="email" class="" type="email" placeholder="abc@abc.zx" required>
                     </div>
                 </form>
                 <div class="buttons-container">
@@ -160,6 +161,7 @@
         </footer>
     </div>
     <script src="../../scripts/pages/payment.js"></script>
+    <script src="../../scripts/pages/paymentValidation.js"></script>
 </body>
 
 </html>
