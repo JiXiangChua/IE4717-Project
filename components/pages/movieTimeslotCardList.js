@@ -66,12 +66,16 @@ const renderAvailableDates = () => {
   const dates = [];
   dates.push("Date"); //default value
   const currentDate = new Date();
-  dates.push(`${currentDate.getDate()}-${currentDate.getMonth()}`);
+  const actualMonth = currentDate.getMonth() + 1;
+  dates.push(`${currentDate.getDate()}-${actualMonth > 11 ? 1 : actualMonth}`);
 
   for (let i = 1; i <= 3; i++) {
     //add the next 3 days
     const dateToAdd = new Date(new Date().getTime() + i * 24 * 60 * 60 * 1000);
-    dates.push(`${dateToAdd.getDate()}-${dateToAdd.getMonth()}`);
+    const actualMonthToAdd = dateToAdd.getMonth() + 1;
+    dates.push(
+      `${dateToAdd.getDate()}-${actualMonthToAdd > 11 ? 1 : actualMonth}`
+    );
   }
 
   // const dateList = document.getElementById("date-picker");
