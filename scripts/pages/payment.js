@@ -20,7 +20,7 @@ const renderMovieTicketDetails = () => {
   date.innerText = `Date:\n${selectedDateString}`;
   time.innerText = `Time:\n${selectedTime}`;
 
-  moviePoster.setAttribute("src", movie.imagePathForMovieDetails);
+  moviePoster.setAttribute("src", movie.imagePathForPayment);
   moviePoster.setAttribute("alt", movie.title);
 };
 

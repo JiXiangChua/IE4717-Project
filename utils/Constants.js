@@ -6,6 +6,7 @@ export const availableMovies = [
     landscapeImage: "./images/pages/home/movie-blackwidow.png",
     imagePathForMovieDetails:
       "../../images/pages/movies/movie-blackwidow-large.png",
+    imagePathForPayment: "../../images/pages/home/movie-blackwidow.png",
     imdbRating: 5,
     guidianceRating: "PG13",
     duration: "134",
@@ -19,6 +20,7 @@ export const availableMovies = [
     landscapeImage: "./images/pages/home/movie-doctorstrange.jpg",
     imagePathForMovieDetails:
       "../../images/pages/movies/movie-doctorstrange-large.png",
+    imagePathForPayment: "../../images/pages/home/movie-doctorstrange.jpg",
     imdbRating: 9,
     guidianceRating: "PG13",
     duration: "126",
@@ -32,6 +34,7 @@ export const availableMovies = [
     landscapeImage: "./images/pages/movies/movide-detail-1917.jpg",
     imagePathForMovieDetails:
       "../../images/pages/movies/movide-detail-1917.jpg",
+    imagePathForPayment: "../../images/pages/movies/movide-detail-1917.jpg",
     imdbRating: 8,
     guidianceRating: "PG13",
     duration: "140",
@@ -49,6 +52,7 @@ export const availableMovies = [
     landscapeImage: "./images/pages/home/movie-jumanji.png",
     imagePathForMovieDetails:
       "../../images/pages/movies/movie-jumanji-large.png",
+    imagePathForPayment: "../../images/pages/movies/movie-jumanji.png",
     imdbRating: 7,
     guidianceRating: "PG13",
     duration: "123",
@@ -62,6 +66,7 @@ export const availableMovies = [
     landscapeImage: "./images/pages/home/movie-johnwick.png",
     imagePathForMovieDetails:
       "../../images/pages/movies/movie-johnwick-large.png",
+    imagePathForPayment: "../../images/pages/movies/movie-johnwick.jpg",
     imdbRating: 6,
     guidianceRating: "PG13",
     duration: "131",
@@ -75,6 +80,7 @@ export const availableMovies = [
     landscapeImage: "./images/pages/movies/movie-spiderman-large.png",
     imagePathForMovieDetails:
       "../../images/pages/movies/movie-spiderman-large.png",
+    imagePathForPayment: "../../images/pages/movies/movie-spiderman.jpg",
     imdbRating: 4.9,
     guidianceRating: "PG13",
     duration: "148",
@@ -88,6 +94,7 @@ export const availableMovies = [
     landscapeImage: "./images/pages/movies/movie-superpets-large.png",
     imagePathForMovieDetails:
       "../../images/pages/movies/movie-superpets-large.png",
+    imagePathForPayment: "../../images/pages/movies/movie-superpets.jpg",
     imdbRating: 4.8,
     guidianceRating: "PG13",
     duration: "105",
@@ -101,6 +108,7 @@ export const availableMovies = [
     landscapeImage: "./images/pages/movies/movie-deadpool-large.png",
     imagePathForMovieDetails:
       "../../images/pages/movies/movie-deadpool-large.png",
+    imagePathForPayment: "../../images/pages/movies/movie-deadpool.png.webp",
     imdbRating: 4.7,
     guidianceRating: "M18",
     duration: "119",
@@ -113,6 +121,7 @@ export const availableMovies = [
     image: "./images/pages/movies/movie-nope.jpeg",
     landscapeImage: "./images/pages/movies/movie-nope-large.png",
     imagePathForMovieDetails: "../../images/pages/movies/movie-nope-large.png",
+    imagePathForPayment: "../../images/pages/movies/movie-nope.jpeg",
     imdbRating: 4.5,
     guidianceRating: "NC16",
     duration: "130",
@@ -126,6 +135,7 @@ export const availableMovies = [
     landscapeImage: "./images/pages/movies/movie-moonlight-large.png",
     imagePathForMovieDetails:
       "../../images/pages/movies/movie-moonlight-large.png",
+    imagePathForPayment: "../../images/pages/movies/movie-moonlight.jpeg",
     imdbRating: 4,
     guidianceRating: "NC16",
     duration: "111",
