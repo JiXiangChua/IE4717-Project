@@ -3,7 +3,7 @@ var timeslotCardList = document.getElementById("time-slots-list");
 //TO fetch the timeslot for only the movie selected.
 var timeslot = [
   {
-    location: "Jurong East",
+    location: "Jurong",
     timeslots: [
       "10:00",
       "11:00",
@@ -25,6 +25,10 @@ var timeslot = [
   },
 ];
 
+const onPageLoad = () => {
+  sessionStorage.removeItem("selectedSession");
+};
+
 const renderTimeslotCardList = () => {
   timeslotCardList.innerHTML = timeslot
     .map(
@@ -34,7 +38,7 @@ const renderTimeslotCardList = () => {
                     <div class="location-cell">${location.location}</div>
                     <div class="timeslot-title-cell">Time Slot</div>
                     <div class="date-cell">
-                    <select name="date" class="date-picker">
+                    <select name="date" class="date-picker" id="date-picker-${location.location}">
                       <option value="" selected>Date</option>
                     </select>
                     </div>
@@ -46,11 +50,14 @@ const renderTimeslotCardList = () => {
     .join("");
 };
 
-const renderAvailableTimeSlot = () => {
+const renderAvailableTimeSlot = (selectedDate = "") => {
   timeslot.map((location, index) => {
     const timeslotList = document.getElementById(`timeslot-cell-${index}`);
     timeslotList.innerHTML = location.timeslots
-      .map((time) => `<p class="timeslot-card">${time}</p>`)
+      .map(
+        (time) =>
+          `<div class="timeslot-card" data-location=${location.location} data-time=${time} data-date=${selectedDate}>${time}</div>`
+      )
       .join("");
   });
 };
@@ -72,15 +79,60 @@ const renderAvailableDates = () => {
 
   for (let datePicker of dateList) {
     datePicker.innerHTML = dates
-      .map(
-        (date) =>
+      .map((date) =>
+        date === "Date"
+          ? `
+          <option value="${date}" selected disabled>${date}</option>
           `
+          : `
           <option value="${date}">${date}</option>
           `
       )
       .join("");
   }
 };
+
+const addEventListenerToDateSelector = () => {
+  timeslot.map((location, index) => {
+    let selector = document.getElementById(`date-picker-${location.location}`);
+
+    selector.addEventListener("change", () => {
+      renderAvailableTimeSlot(selector.value);
+      addEventListenerToTimeslots();
+    });
+  });
+};
+
+const navigate = (location, date, time) => {
+  if (!date) {
+    alert("Please select a date from one of the locations listed.");
+  } else {
+    sessionStorage.setItem(
+      "selectedSession",
+      JSON.stringify([location, date, time])
+    );
+    window.location.href = "../../pages/movies/seatSelection.html";
+  }
+};
+
+const addEventListenerToTimeslots = () => {
+  const timeslotCards = document.getElementsByClassName("timeslot-card");
+  const timeslotCardsArray = [...timeslotCards]; //type cast to array
+
+  timeslotCardsArray.map((card) => {
+    card.addEventListener("click", () => {
+      navigate(
+        card.getAttribute("data-location"),
+        card.getAttribute("data-date"),
+        card.getAttribute("data-time")
+      );
+    });
+  });
+};
+
+onPageLoad();
 renderTimeslotCardList();
 renderAvailableTimeSlot();
 renderAvailableDates();
+addEventListenerToDateSelector();
+addEventListenerToTimeslots();

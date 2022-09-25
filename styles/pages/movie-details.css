@@ -138,7 +138,7 @@ html {
   cursor: pointer;
   padding: 15px;
   font-size: 20px;
-  margin-top: 32px;
+  margin-top: 20px;
   -webkit-appearance: none; /* Safari and Chrome */
   appearance: none;
 }
@@ -186,11 +186,13 @@ html {
   width: 100px;
   height: 40px;
   padding: 10px 20px;
+  margin: 20px 0px;
   background-color: rgba(20, 20, 22, 0.5);
   border: 2px solid rgba(254, 140, 0, 1);
   backdrop-filter: blur(30px);
   border-radius: 20px;
   text-align: center;
+  font-size: 30px;
   cursor: pointer;
 }
 

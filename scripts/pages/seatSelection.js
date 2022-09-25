@@ -4,6 +4,11 @@ const count = document.getElementById("count");
 const selectSeatsList = document.getElementById("selected-seats");
 const nextButton = document.getElementById("next-button");
 
+const { title } = JSON.parse(sessionStorage.getItem("movieDetailsPage"))[0];
+const [, selectedDate, selectedTime] = JSON.parse(
+  sessionStorage.getItem("selectedSession")
+);
+
 var updatedSelectedSeatList = [];
 
 var occupiedSeats = [
@@ -19,6 +24,14 @@ var occupiedSeats = [
   "E19",
   "E20",
 ]; //take from database
+
+//set movie title, date and time once this page loads
+document.getElementById("movie-title").innerText = title;
+document.getElementById("movie-date").innerText = `Date: ${selectedDate.replace(
+  "-",
+  " / "
+)}`;
+document.getElementById("movie-time").innerText = `Time: ${selectedTime}`;
 
 //restore already occupied seats:
 const renderOccupiedSeats = () => {

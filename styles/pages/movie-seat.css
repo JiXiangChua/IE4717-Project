@@ -9,12 +9,21 @@ ul {
 
 .movie-detail-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: flex-start;
 }
 
 .movie-detail-container p {
   padding-left: 50px;
+}
+
+.movie-detail-row {
+  display: flex;
+  flex-direction: row;
+}
+
+#movie-title {
+  font-size: 36px;
 }
 
 .seat-plan-container {
