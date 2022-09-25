@@ -55,6 +55,10 @@ body {
   position: relative;
 }
 
+.top5-Card:hover {
+  cursor: pointer;
+}
+
 .rank-number {
   position: absolute;
   top: -80px;
@@ -105,6 +109,10 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.recommended-card:hover {
+  cursor: pointer;
 }
 
 .recommended-card img {

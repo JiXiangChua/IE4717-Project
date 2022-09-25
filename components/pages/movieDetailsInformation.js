@@ -1,23 +1,20 @@
+import { availableMovies } from "../../utils/Constants.js";
+
 var detailContainer = document.getElementById("detail-container");
 
-//get movie information from the previous page
-tempSelectedMovie = {
-  title: "1917",
-  imagePath: "../../images/pages/movies/movide-detail-1917.jpg",
-  imdbRating: "8.4",
-  guidianceRating: "PG13",
-  duration: "140",
-  year: "2022",
-  description: `1917 is a 2019 war film directed and produced by Sam Mendes, who
-  co-wrote the film with Krysty Wilson-Cairns. Partially inspired by stories told to Mendes by
-  his paternal grandfather Alfred about his service during World War I, the film takes
-  place after the German retreat to the Hindenburg Line during Operation Alberich, and follows
-  two British soldiers.`,
-};
+const payloadFromPreviousPage = JSON.parse(
+  sessionStorage.getItem("movieDetailsPage")
+);
+
+const tempSelectedMovie = availableMovies.filter(
+  (movie) => movie.id === payloadFromPreviousPage[0].id
+)[0]; //returns the selected movie javascript object details
+
+// console.log(tempSelectedMovie);
 
 detailContainer.innerHTML = `
     <div class="movie-poster">
-        <img src="${tempSelectedMovie.imagePath}" alt="${tempSelectedMovie.title}">
+        <img src="${tempSelectedMovie.imagePathForMovieDetails}" alt="${tempSelectedMovie.title}">
     </div>
     <div class="detail-overlay">
         <div class="detail">
