@@ -73,10 +73,10 @@ ul {
 }
 
 .seat-plan-legend {
-  width: 50%;
-  background-color: rgba(0, 0, 0, 0.1);
+  width: 30%;
+  background-color: rgba(0, 0, 0, 0.05);
   padding: 5px 10px;
-  border-radius: 5px;
+  border-radius: 20px;
   color: #777;
   list-style-type: none;
   display: flex;
@@ -99,16 +99,17 @@ ul {
 }
 
 .screen {
-  width: 1000px;
-  height: 100px;
+  width: 100%;
+  min-width: 1200px;
+  height: 200px;
   border: solid 5px #fe8c00;
   border-color: #fe8c00 transparent transparent transparent;
-  border-radius: 50%/100px 100px 0 0;
+  border-radius: 50%/200px 200px 0 0;
   margin-top: 20px;
 }
 
 .screen-label {
-  margin: 0px;
+  margin: -100px 0px 100px 0px;
 }
 
 .seat-plan-container {
@@ -133,10 +134,27 @@ ul {
 
 .text-prompt {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-size: 24px;
+}
+
+.text-prompt p {
+  margin-bottom: 10px;
 }
 
 .text-prompt span {
-  color: #6feaf6;
+  background: linear-gradient(90deg, #fe8c00 0%, #f83600 96.88%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-self: center;
+  width: 90%;
 }

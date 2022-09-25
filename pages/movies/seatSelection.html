@@ -27,36 +27,20 @@
                     <p>Movie Name</p>
                     <p>Date & Time</p>
                 </div>
-
-                <ul class="seat-plan-legend">
-                    <li>
-                        <div class="seat"></div>
-                        <p>N/A</p>
-                    </li>
-                    <li>
-                        <div class="seat selected"></div>
-                        <p>Selected</p>
-                    </li>
-                    <li>
-                        <div class="seat occupied"></div>
-                        <p>Occupied</p>
-                    </li>
-                </ul>
-
                 <div class="seat-plan-container">
                     <div class="screen"></div>
                     <p class="screen-label">Screen</p>
                     <div class="row firstrow">
                         <div class="row-labels">A</div>
-                        <div class="seat occupied" data-value="A1"></div>
+                        <div class="seat" data-value="A1"></div>
                         <div class="seat" data-value="A2"></div>
                         <div class="seat" data-value="A3"></div>
                         <div class="seat" data-value="A4"></div>
-                        <div class="seat occupied" data-value="A5"></div>
+                        <div class="seat" data-value="A5"></div>
                         <div class="seat" data-value="A6"></div>
                         <div class="seat" data-value="A7"></div>
                         <div class="seat" data-value="A8"></div>
-                        <div class="seat occupied" data-value="A9"></div>
+                        <div class="seat" data-value="A9"></div>
                         <div class="seat" data-value="A10"></div>
                         <div class="seat" data-value="A11"></div>
                         <div class="seat" data-value="A12"></div>
@@ -166,9 +150,27 @@
                         <div class="seat" data-value="E20"></div>
                     </div>
                 </div>
-                <p class="text-prompt">
-                    You have selected &nbsp;<span id="count">0</span>&nbsp; seats.
-                </p>
+                <ul class="seat-plan-legend">
+                    <li>
+                        <div class="seat"></div>
+                        <p>Available</p>
+                    </li>
+                    <li>
+                        <div class="seat selected"></div>
+                        <p>Selected</p>
+                    </li>
+                    <li>
+                        <div class="seat occupied"></div>
+                        <p>Occupied</p>
+                    </li>
+                </ul>
+                <div class="text-prompt">
+                    <p>You have selected &nbsp;<span id="count">0</span>&nbsp; seats.</p>
+                    <p id="selected-seats"></p>
+                </div>
+                <div class="button-container">
+                    <button type="button" class="primary-button" id="next-button">Next</button>
+                </div>
             </div>
         </div>
         <footer class="footer-container">
