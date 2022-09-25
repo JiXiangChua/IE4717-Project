@@ -1,0 +1,142 @@
+ul {
+  color: #ffffff;
+}
+
+.movie-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.movie-detail-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.movie-detail-container p {
+  padding-left: 50px;
+}
+
+.seat-plan-container {
+  margin: 2px 0px;
+}
+
+.seat {
+  background-color: #444451;
+  height: 20px;
+  width: 25px;
+  margin: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.row {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 5px 0px;
+}
+
+.firstrow {
+  margin-top: 50px;
+}
+
+.seat.selected {
+  background-image: linear-gradient(90deg, #fe8c00 0%, #f83600 96.88%);
+}
+
+.seat.occupied {
+  background-color: #ffffff;
+}
+
+.seat:nth-of-type(6) {
+  /*Creating the left column of seats*/
+  margin-right: 10%;
+}
+
+.seat:nth-last-of-type(5) {
+  /*Creating the right column of seats*/
+  margin-left: 10%;
+}
+
+.seat:not(.occupied):hover {
+  /*Whenever the seat does not have the class occupied and on hover: */
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.seat-plan-legend .seat:not(.occupied):hover {
+  /*Turn off the hover effect for those icon in the legend*/
+  cursor: default;
+  transform: scale(1);
+}
+
+.seat-plan-legend {
+  width: 50%;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: #777;
+  list-style-type: none;
+  display: flex;
+  align-self: center;
+  justify-content: space-between;
+}
+
+.seat-plan-legend li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0px 10px;
+}
+
+.seat-plan-legend li p {
+  color: #ffffff;
+  margin: 0px;
+  font-size: 18px;
+}
+
+.screen {
+  width: 1000px;
+  height: 100px;
+  border: solid 5px #fe8c00;
+  border-color: #fe8c00 transparent transparent transparent;
+  border-radius: 50%/100px 100px 0 0;
+  margin-top: 20px;
+}
+
+.screen-label {
+  margin: 0px;
+}
+
+.seat-plan-container {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  perspective: 1000px;
+  margin-bottom: 50px;
+}
+
+.row-labels {
+  background: linear-gradient(90deg, #fe8c00 0%, #f83600 96.88%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 30px;
+  width: 50px;
+}
+
+.text-prompt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-prompt span {
+  color: #6feaf6;
+}
