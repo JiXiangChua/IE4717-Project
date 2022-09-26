@@ -1,0 +1,152 @@
+
+body{
+    overflow-x: hidden;
+    margin:0 0;
+
+}
+
+.container{
+    padding-left: 30px;
+}
+
+.food{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.food h3{
+    font-size: 40px;
+    color: white;
+}
+
+.food_card_list{
+    display: flex;
+    flex-direction: row;
+    width: 350px;
+    height: 515px;
+    justify-content: left;
+}
+
+.food_card{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 0 80px;
+    /* gap between food card */
+}
+
+.item_img{
+    width:350px;
+    height: 300px;
+}
+
+.item_img img{
+    width: 100%;
+    height: 100%;
+}
+
+.item_price{
+    padding-top: 20px;
+    
+}
+
+.item_price h5{
+    margin: 0 auto;
+    font-size: 30px;
+    color:white;
+}
+
+.quantity_counter{
+    display: inline-flex;
+    flex-direction: row;
+    width: 350px;
+    height: 100px ;
+    justify-content: center;
+    padding-top: 50px;
+
+}
+
+.counter_button_dec{
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-size: 40px;
+    padding:0 30px;
+    cursor: pointer;
+}
+
+.counter_button_inc{
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-size: 40px;
+    padding:0 30px;
+    cursor: pointer;
+}
+
+.counter_button_dec:hover{
+    border: none;
+    color:rgb(254, 140, 0);
+}
+
+.counter_button_inc:hover{
+    border: none;
+    color:rgb(254, 140, 0);
+}
+
+
+.counter_display{
+    width: 70px;
+    height: 70px;
+    background-color: white;
+    border-radius: 100px;
+    border: 1px solid white;
+    outline:none;
+    font-size: 30px;
+    color: black;
+    text-align: center;
+}
+
+.buttons{
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+    width: 80%;
+    margin-top: 8%;
+    padding: 0 5%;
+
+}
+
+/* .back_button{
+    border: 3px solid #F83600;
+    background-color: transparent;
+    color: white;
+    width: 200px;
+    height: 60px;
+    font-size: 30px;
+    border-radius: 30px;
+}
+
+.back_button:hover{
+    background-color: white;
+    color:#FE8C00;
+}
+
+.next_button{
+    width: 200px;
+    height: 60px;
+    font-size: 30px;
+    border-radius: 30px;
+    border:none;
+    background: linear-gradient(180deg, #FE8C00 0%, #F83600 100%);
+    color: white;;
+}
+
+.next_button:hover{
+    background: none;
+    background-color: white;
+    color:#FE8C00;
+    border: 3px solid #F83600;
+} */

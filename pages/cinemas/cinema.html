@@ -29,32 +29,72 @@
             <div class="slideshow">
 
                 <div class="cinema_slide">
-                    <img src="../../images/pages/cinemas/location-cinema.jpg">
-                    <div class="cinema_description">Cineverse @ Jurong East</div>
-                </div>
-
-                <div class="cinema_slide">
                     <img src="../../images/pages/cinemas/orchard_cinema.jpg">
-                    <div class="cinema_description">Cineverse @ Orchard</div>
+                    <div class="img_overlay"></div>
+                    <div class="cinema_description">
+                        <h5>Cineverse @ Orchard</h5>
+                        <p><br>Address: #03-40, ION Orchard, 2 Orchard Turn, Singapore 238801 <br><br>
+                            Tel: (+65)9017 7537
+                        </p>
+                    </div>
                 </div>
 
                 <div class="cinema_slide">
                     <img src="../../images/pages/cinemas/tampines_cinema.jpg">
-                    <div class="cinema_description">Cineverse @ Tampines </div>
+                    <div class="img_overlay"></div>
+                    <div class="cinema_description">
+                        <h5>Cineverse @ Tampines</h5>
+                        <p><br>Address: #04-17/18, Tampines Mall Shopping Centre, Singapore
+                            529510<br><br>
+                            Tel: (+65)9017 7432</p>
+                    </div>
                 </div>
 
-                <a class="prev_button" onclick="slideAction(-1)">&#10094;</a>
-                <a class="next_button" onclick="slideAction(1)">&#10095;</a>
+                <div class="cinema_slide">
+                    <img src="../../images/pages/cinemas/location-cinema.jpg">
+                    <div class="img_overlay"></div>
+                    <div class="cinema_description">
+                        <h5>Cineverse @ Jurong East</h5>
+                        <p><br>Address: 2, Jurong East Central 1, JCube, #04-11, Singapore 609731<br><br>
+                            Tel: (+65)9017 7493
+                        </p>
+                    </div>
+                </div>
+
+
+
+                <div class="buttons">
+                    <a class="prev_button" onclick="slideAction(-1)">&#10094;</a>
+                    <a class="next_button" onclick="slideAction(1)">&#10095;</a>
+                </div>
+
             </div>
 
             <br>
-
+            <br>
             <div class="slide_indicator">
                 <span class="dot" onclick="currentSlide(1)"></span>
                 <span class="dot" onclick="currentSlide(2)"></span>
                 <span class="dot" onclick="currentSlide(3)"></span>
             </div>
         </div>
+
+        <footer class="footer-container">
+            <img id="cineverse-logo" src="../../images/icons/cineverse_logo.png" alt="cineverse_logo">
+            <div class="link-container">
+                <a href="">About</a>
+                <a href="">FAQs</a>
+                <a href="">Contact Us</a>
+                <a href="">Terms of Service</a>
+            </div>
+            <div class="social-media-icons">
+                <img id="social-media-icon" src="../../images/icons/facebook-icon.png" alt="facebook-icon">
+                <img id="social-media-icon" src="../../images/icons/instagram-icon.png" alt="instagram-icon">
+            </div>
+            <p>&copy; COPYRIGHT 2022 IE4717 F38-DG05 | CHUA JI XIANG | TANG ZHAO SHENG </p>
+        </footer>
+
+
     </div>
 
     <script type="text/javascript" src="../../scripts/pages/cinema.js"></script>
