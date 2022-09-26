@@ -2,11 +2,11 @@ export const availableMovies = [
   {
     id: 1,
     title: "Black Widow",
-    image: "./images/pages/home/movie-blackwidow.png",
+    image: "./images/pages/movies/movie-blackwidow.jpg",
     landscapeImage: "./images/pages/home/movie-blackwidow.png",
     imagePathForMovieDetails:
       "../../images/pages/movies/movie-blackwidow-large.png",
-    imagePathForPayment: "../../images/pages/home/movie-blackwidow.png",
+    imagePathForPayment: "../../images/pages/movies/movie-blackwidow.jpg",
     imdbRating: 5,
     guidianceRating: "PG13",
     duration: "134",
@@ -16,11 +16,11 @@ export const availableMovies = [
   {
     id: 2,
     title: "Doctor Strange In The Multiverse of Maddness",
-    image: "./images/pages/home/movie-doctorstrange.jpg",
+    image: "./images/pages/home/movie-doctorStrange.jpg",
     landscapeImage: "./images/pages/home/movie-doctorstrange.jpg",
     imagePathForMovieDetails:
       "../../images/pages/movies/movie-doctorstrange-large.png",
-    imagePathForPayment: "../../images/pages/home/movie-doctorstrange.jpg",
+    imagePathForPayment: "../../images/pages/movies/movie-doctorStrange.jpg",
     imdbRating: 9,
     guidianceRating: "PG13",
     duration: "126",
@@ -30,11 +30,10 @@ export const availableMovies = [
   {
     id: 3,
     title: "1917",
-    image: "./images/pages/movies/movide-detail-1917.jpg",
-    landscapeImage: "./images/pages/movies/movide-detail-1917.jpg",
-    imagePathForMovieDetails:
-      "../../images/pages/movies/movide-detail-1917.jpg",
-    imagePathForPayment: "../../images/pages/movies/movide-detail-1917.jpg",
+    image: "./images/pages/movies/movie-detail-1917.jpg",
+    landscapeImage: "./images/pages/movies/movie-detail-1917.jpg",
+    imagePathForMovieDetails: "../../images/pages/movies/movie-detail-1917.jpg",
+    imagePathForPayment: "../../images/pages/movies/movie-1917.jpg",
     imdbRating: 8,
     guidianceRating: "PG13",
     duration: "140",
@@ -52,7 +51,7 @@ export const availableMovies = [
     landscapeImage: "./images/pages/home/movie-jumanji.png",
     imagePathForMovieDetails:
       "../../images/pages/movies/movie-jumanji-large.png",
-    imagePathForPayment: "../../images/pages/movies/movie-jumanji.png",
+    imagePathForPayment: "../../images/pages/movies/movie-jumanji.jpg",
     imdbRating: 7,
     guidianceRating: "PG13",
     duration: "123",
@@ -104,11 +103,11 @@ export const availableMovies = [
   {
     id: 8,
     title: "Deadpool 3",
-    image: "./images/pages/movies/movie-deadpool.png.webp",
+    image: "./images/pages/movies/movie-deadpool.jpg",
     landscapeImage: "./images/pages/movies/movie-deadpool-large.png",
     imagePathForMovieDetails:
       "../../images/pages/movies/movie-deadpool-large.png",
-    imagePathForPayment: "../../images/pages/movies/movie-deadpool.png.webp",
+    imagePathForPayment: "../../images/pages/movies/movie-deadpool.jpg",
     imdbRating: 4.7,
     guidianceRating: "M18",
     duration: "119",
@@ -118,10 +117,10 @@ export const availableMovies = [
   {
     id: 9,
     title: "Nope",
-    image: "./images/pages/movies/movie-nope.jpeg",
+    image: "./images/pages/movies/movie-nope.jpg",
     landscapeImage: "./images/pages/movies/movie-nope-large.png",
     imagePathForMovieDetails: "../../images/pages/movies/movie-nope-large.png",
-    imagePathForPayment: "../../images/pages/movies/movie-nope.jpeg",
+    imagePathForPayment: "../../images/pages/movies/movie-nope.jpg",
     imdbRating: 4.5,
     guidianceRating: "NC16",
     duration: "130",
@@ -131,17 +130,46 @@ export const availableMovies = [
   {
     id: 10,
     title: "Moonlight",
-    image: "./images/pages/movies/movie-moonlight.jpeg",
+    image: "./images/pages/movies/movie-moonlight.jpg",
     landscapeImage: "./images/pages/movies/movie-moonlight-large.png",
     imagePathForMovieDetails:
       "../../images/pages/movies/movie-moonlight-large.png",
-    imagePathForPayment: "../../images/pages/movies/movie-moonlight.jpeg",
+    imagePathForPayment: "../../images/pages/movies/movie-moonlight.jpg",
     imdbRating: 4,
     guidianceRating: "NC16",
     duration: "111",
     year: "2016",
     description: `In Liberty City, Miami at the height of the crack epidemic, Afro-Cuban drug dealer Juan finds Chiron, a withdrawn child who goes by the nickname "Little," hiding from a group of bullies in a crackhouse. He lets Chiron spend the night with him and his girlfriend Teresa before returning Chiron to his mother Paula, who revokes his TV privileges as punishment for worrying her. Chiron continues to spend time with Juan, who teaches him how to swim and mentors him, telling him he can choose his own path in life.`,
   },
+  {
+    id: 11,
+    title: "The Martian",
+    image: "./images/pages/movies/movie-bringmehome.jpg",
+    landscapeImage: "./images/pages/movies/movie-bringmehome-large.jpeg",
+    imagePathForMovieDetails:
+      "../../images/pages/movies/movie-bringmehome-large.jpeg",
+    imagePathForPayment: "../../images/pages/movies/movie-bringmehome.jpg",
+    imdbRating: 4.3,
+    guidianceRating: "PG13",
+    duration: "141",
+    year: "2015",
+    description: `In 2035, the crew of the Ares III mission to Mars is exploring Acidalia Planitia on Martian solar day (sol) 18 of their 31-sol expedition. A severe dust storm threatens to topple their Mars Ascent Vehicle (MAV). The mission is scrubbed, but as the crew evacuates, astronaut Mark Watney is struck by debris. The telemetry from his suit's bio-monitor is damaged and Watney is erroneously presumed dead. With the MAV (Mars Ascent Vehicle) on the verge of toppling, the remaining crew takes off for their orbiting vessel, the Hermes.`,
+  },
 ];
 
-export const upcomingMovies = [];
+export const upcomingMovies = [
+  { title: "Us(R18)", img: "../../images/pages/movies/movie-us.jpg" },
+  {
+    title: "10 things I hate about you",
+    img: "../../images/pages/movies/movie-hate.jpg",
+  },
+  {
+    title: "Jurassic Park",
+    img: "../../images/pages/movies/movie-jurassic.jpg",
+  },
+
+  {
+    title: "007: No time to die",
+    img: "../../images/pages/movies/movie-007.jpg",
+  },
+];

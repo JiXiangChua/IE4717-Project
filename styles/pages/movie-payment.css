@@ -98,6 +98,8 @@
 .e-ticket-seats {
   flex: 1;
   padding: 0px 0px 0px 20px;
+  margin: 0px;
+  color: #ffffff;
 }
 
 #movie-seat-number {
