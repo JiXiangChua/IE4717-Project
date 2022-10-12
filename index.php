@@ -24,7 +24,7 @@ session_start();
                 <a href="./pages/movies/movies.php">Movies</a>
                 <a href="./pages/cinemas/cinema.html">Cinemas</a>
                 <a href="./pages/promotions/promotion.html">Promotions</a>
-                <a href="./pages/checkbooking/checkbooking.php">Check Booking</a>
+                <a href="./pages/checkbooking/checkbooking.html">Check Booking</a>
             </div>
         </nav>
         <video id="opening-trailer" autoplay muted loop>
@@ -41,7 +41,7 @@ session_start();
                         for ($i = 0; $i < count($top5movies); $i++)
                         {
                             $movie = $top5movies[$i];
-                            echo "<a href='./pages/movies/movieDetails.html?movieid=" . $movie["id"] . "' style='text-decoration: none'>";
+                            echo "<a href='./pages/movies/movieDetails.php?movieid=" . $movie["id"] . "' style='text-decoration: none'>";
                             echo "<div>";
                             echo "<div class='top5-Card' data-value='" . $movie["id"] . "'>";
                             echo "<div class='rank-number'>" . ($i + 1) . "</div>";
@@ -67,7 +67,7 @@ session_start();
                         for ($i = 0; $i < count($movies); $i++)
                         {
                             $movie = $movies[$i];
-                            echo "<a href='./pages/movies/movieDetails.html?movieid=" . $movie["id"] . "' style='text-decoration: none'>";
+                            echo "<a href='./pages/movies/movieDetails.php?movieid=" . $movie["id"] . "' style='text-decoration: none'>";
                             echo "<div class='recommended-card' data-value='" . $movie["id"] . "'>";
                             echo "<img src='" . "./images/pages/movies/" . $movie["imagePath"] . "' alt='" . $movie["title"] . "'>";
                             echo "<p>" . $movie["title"] . "</p>";
