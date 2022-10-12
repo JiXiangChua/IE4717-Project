@@ -1,18 +1,16 @@
 <?php
+    session_start();
 
-$name = $_POST['cardHolder']; //must use square brackets!!
-$cardNumber = $_POST['cardNumber'];
-$expiryDate = $_POST['expiryDate'];
-$cvcNumber = $_POST['cvc'];
-$email = $_POST['email'];
+    // $name = $_POST['cardHolder']; //must use square brackets!!
+    // $cardNumber = $_POST['cardNumber'];
+    // $expiryDate = $_POST['expiryDate'];
+    // $cvcNumber = $_POST['cvc'];
+    // $email = $_POST['email'];
 
-// @ $db = new mysqli('localhost', 'localhost', '', 'cineverseDB');
-// if (mysqli_connect_errno())
-// {
-//     echo "<script>console.log(Error)</script>";
-
-//     exit;
-// }
+    //Destroy session at the end of php:
+    session_destroy();
+    $sessionId = session_id() == "" ? "NULL" : session_id();
+    echo "<script>console.log('Session id after destoryed: ".$sessionId."')</script>";
 ?>
 
 <html>
