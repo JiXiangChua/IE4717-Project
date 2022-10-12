@@ -28,5 +28,7 @@ $selectedMovie["duration"] = $row["duration"];
 $selectedMovie["year"] = $row["year"];
 $selectedMovie["description"] = $row["description"];
 
+$_SESSION['movieTitle'] = $selectedMovie["title"];
+
 
 ?>

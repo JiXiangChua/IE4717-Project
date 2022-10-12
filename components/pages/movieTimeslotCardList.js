@@ -115,7 +115,7 @@ const navigate = (location, date, time) => {
       "selectedSession",
       JSON.stringify([location, date, time])
     );
-    window.location.href = "../../pages/movies/seatSelection.html";
+    window.location.href = `../../pages/movies/seatSelection.php?location=${location}&date=${date}&time=${time}`; //pass selected date&time as url
   }
 };
 
