@@ -1,5 +1,4 @@
 <?php
-    include ('../../php/connectDB.php');
 
     session_start();
     $movieTitle = $_SESSION['movieTitle'];
@@ -12,12 +11,13 @@
         exit;
     }
 
+    include ('../../php/selectOccupiedSeatsForMovie.php');
+
     $previouslySelectedSeats = array();
 
     if (isset($_SESSION["selectedSeats"])) {
         // if seat is previously selected, then restore them:
         $previouslySelectedSeats = $_SESSION['selectedSeats'];
-        var_dump($previouslySelectedSeats);
     }
 
 ?>
@@ -203,6 +203,8 @@
                     <form method="POST" action="./food.php">
                         <!-- This input is only used for restoring previously selected seats if any. This is not send to the POST -->
                         <input id="previous-selected-seats" type="hidden" value="<?php echo implode(", ", $previouslySelectedSeats) ?>">
+                        <!-- This input is only used for retrieving occupied seats from database. This is not send to the POST -->
+                        <input id="occupied-seats-db" type="hidden" value="<?php echo $occupiedSeatsString ?>">
                         <input id="submit-final-selected-seats" name="confirm-seats" type="hidden">
                         <input type="submit" value="Next" class="primary-button" id="next-button">
                     </form>

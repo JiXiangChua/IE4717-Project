@@ -18,3 +18,20 @@ insert into upcomingMovies values
 (2, "10 things I hate about you", "movie-hate.jpg"),
 (3, "Jurassic Park", "movie-jurassic.jpg"),
 (4, "007: No time to die", "movie-007.jpg");
+
+insert into movieSessions values 
+(NULL, 1, "Jurong", "14/10", "10:00"),
+(NULL, 1, "Orchard", "14/10", "10:00"),
+(NULL, 1, "Tampines", "14/10", "10:00");
+
+insert into occupiedSeats values 
+(1, "A1"),
+(1, "A2"),
+(1, "A16"),
+(1, "A17"),
+(1, "B8"),
+(1, "B10"),
+(1, "C14"),
+(1, "C15"),
+(1, "E19"),
+(1, "E20");

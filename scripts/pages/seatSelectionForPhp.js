@@ -9,22 +9,12 @@ const submitFinalSelectedSeats = document.getElementById(
 const previouslySelectedSeats = document.getElementById(
   "previous-selected-seats"
 );
+const occupiedSeatsFromDb = document.getElementById("occupied-seats-db");
 
 var updatedSelectedSeatList = [];
 
-var occupiedSeats = [
-  "A1",
-  "A2",
-  "A16",
-  "A17",
-  "B8",
-  "B9",
-  "B10",
-  "C14",
-  "C15",
-  "E19",
-  "E20",
-]; //take from database
+var occupiedSeats = [];
+occupiedSeats = occupiedSeatsFromDb.value.split("-"); //take from database by passing the php var into html input's value
 
 //restore already occupied seats:
 const renderOccupiedSeats = () => {

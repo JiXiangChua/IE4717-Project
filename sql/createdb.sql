@@ -19,3 +19,20 @@ create table upcomingMovies
     title varchar(100) not null,
     imagePath varchar(255) not null
 );
+
+create table movieSessions
+(
+    sessionid int unsigned not null auto_increment primary key,
+    movieid int unsigned not null,
+    screeningLocation varchar(50) not null,
+    screeningDate char(6) not null,
+    screeningTime char (6) not null,
+    FOREIGN KEY (movieid) REFERENCES movies(movieid)
+);
+
+create table occupiedSeats 
+(
+    sessionid int unsigned not null,
+    seatNumber char(5) not null,
+    FOREIGN KEY (sessionid) REFERENCES movieSessions(sessionid)
+);
