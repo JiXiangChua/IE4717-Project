@@ -3,16 +3,21 @@
 
     session_start();
     $movieTitle = $_SESSION['movieTitle'];
-    
-    $_SESSION['location'] = $_GET['location'];
-    $_SESSION['date'] = str_replace("-", " / ", $_GET['date']);
-    $_SESSION['time'] = $_GET['time'];
+
+    if(isset($_GET['location']) || isset($_GET['date']) || isset($_GET['time'])) {
+        $_SESSION['location'] = $_GET['location'];
+        $_SESSION['date'] = str_replace("-", " / ", $_GET['date']);
+        $_SESSION['time'] = $_GET['time'];
+        header('location: ' . $_SERVER['PHP_SELF']);
+        exit;
+    }
 
     $previouslySelectedSeats = array();
 
     if (isset($_SESSION["selectedSeats"])) {
         // if seat is previously selected, then restore them:
-        $previouslySelectedSeats = $_SESSION['selectedSeats']; //TODO
+        $previouslySelectedSeats = $_SESSION['selectedSeats'];
+        var_dump($previouslySelectedSeats);
     }
 
 ?>
@@ -41,10 +46,16 @@
         <div class="container">
             <div class="movie-container">
                 <div class="movie-detail-container">
-                    <p id="movie-title"><?php echo $movieTitle ?></p>
+                    <p id="movie-title">
+                        <?php echo $movieTitle ?>
+                    </p>
                     <div class="movie-detail-row">
-                        <p id="movie-date"><?php echo str_replace("-", " / ", $_SESSION['date']) ?></p>
-                        <p id="movie-time"><?php echo $_SESSION['time'] ?></p>
+                        <p id="movie-date">
+                            <?php echo str_replace("-", " / ", $_SESSION['date']) ?>
+                        </p>
+                        <p id="movie-time">
+                            <?php echo $_SESSION['time'] ?>
+                        </p>
                     </div>
                 </div>
                 <div class="seat-plan-container">
@@ -190,6 +201,8 @@
                 </div>
                 <div class="button-container">
                     <form method="POST" action="./food.php">
+                        <!-- This input is only used for restoring previously selected seats if any. This is not send to the POST -->
+                        <input id="previous-selected-seats" type="hidden" value="<?php echo implode(", ", $previouslySelectedSeats) ?>">
                         <input id="submit-final-selected-seats" name="confirm-seats" type="hidden">
                         <input type="submit" value="Next" class="primary-button" id="next-button">
                     </form>

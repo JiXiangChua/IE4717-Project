@@ -6,6 +6,9 @@ const nextButton = document.getElementById("next-button");
 const submitFinalSelectedSeats = document.getElementById(
   "submit-final-selected-seats"
 );
+const previouslySelectedSeats = document.getElementById(
+  "previous-selected-seats"
+);
 
 var updatedSelectedSeatList = [];
 
@@ -62,19 +65,19 @@ const updateSelectedCount = () => {
 };
 
 //restore user previously selected seats
-// const renderPreviousSelectedSeats = () => {
-//   const selectedSeats = JSON.parse(sessionStorage.getItem("selectedSeats"));
+const renderPreviousSelectedSeats = () => {
+  const selectedSeats = previouslySelectedSeats.value.split(", "); //get from html where the php variable is inserted.
 
-//   if (selectedSeats !== null && selectedSeats.length > 0) {
-//     seats.forEach((seat) => {
-//       if (selectedSeats.includes(seat.getAttribute("data-value"))) {
-//         seat.classList.add("selected");
-//       }
-//     });
-//   }
+  if (selectedSeats !== null && selectedSeats.length > 0) {
+    seats.forEach((seat) => {
+      if (selectedSeats.includes(seat.getAttribute("data-value"))) {
+        seat.classList.add("selected");
+      }
+    });
+  }
 
-//   updateSelectedCount();
-// };
+  updateSelectedCount();
+};
 
 seatPlanContainer.addEventListener("click", (event) => {
   //if seat is click but it cannot be an occupied seat:
@@ -89,17 +92,6 @@ seatPlanContainer.addEventListener("click", (event) => {
   updateSelectedCount();
 });
 
-// nextButton.addEventListener("click", () => {
-//   //save user seat selection:
-//   sessionStorage.setItem(
-//     "selectedSeats",
-//     JSON.stringify(updatedSelectedSeatList)
-//   );
-
-//   //navigate to food page
-//   window.location.href = "./food.html";
-// });
-
 //functions that execute when page loads:
 renderOccupiedSeats();
-// renderPreviousSelectedSeats();
+renderPreviousSelectedSeats();

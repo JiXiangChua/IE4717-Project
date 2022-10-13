@@ -45,7 +45,7 @@
                     <p>E-tickets have been sent to your e-mail: abc@abc.com</p>
                     <!-- TODO: change email to variable -->
                 </div>
-                <a href="../../index.html">
+                <a href="../../index.php">
                     <button type="button" class="accent-button done-button">Done</button>
                 </a>
             </div>

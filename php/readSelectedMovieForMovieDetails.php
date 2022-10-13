@@ -4,8 +4,12 @@ include('connectDB.php');
 
 session_start();
 
-$id = $_GET['movieid'];
-$_SESSION['movieid'] = $id;
+if (isset($_GET['movieid'])) {
+    $id = $_GET['movieid'];
+    $_SESSION['movieid'] = $id;
+    header('location: ' . $_SERVER['PHP_SELF']);
+    exit; //stop executing and refresh the page again based on the header();
+}
 
 $query = "SELECT * from movies where movieid='" . $_SESSION['movieid'] . "';";
 $stmt = $db->prepare($query);
