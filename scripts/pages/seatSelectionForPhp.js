@@ -56,8 +56,10 @@ const updateSelectedCount = () => {
     const listOfSelectedSeats = selected.join(", ");
 
     selectSeatsList.innerText = `Selected: ${listOfSelectedSeats}`;
+    nextButton.hidden = false;
   } else {
     selectSeatsList.innerText = "";
+    nextButton.hidden = true; //hide submit button if no seats are selected
   }
 
   updatedSelectedSeatList = [...selected];
