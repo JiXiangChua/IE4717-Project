@@ -66,4 +66,6 @@ if ($sessionIdResult->num_rows < 1)
 $sessionId = $sessionIdResult->fetch_assoc()["sessionid"];
 $_SESSION['sessionid'] = $sessionId;
 
+$db->close();
+
 ?>

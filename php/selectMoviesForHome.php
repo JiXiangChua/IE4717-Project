@@ -44,6 +44,8 @@ for ($i = 0; $i < $num_results; $i++)
 
 }
 
+$db->close();
+
 // print_r($movies); //For debugging
 
 ?>

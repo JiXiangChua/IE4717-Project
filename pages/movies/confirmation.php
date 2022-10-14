@@ -7,6 +7,8 @@
     // $cvcNumber = $_POST['cvc'];
     // $email = $_POST['email'];
 
+    include("../../php/createPurchaseOrder.php");
+
     //Destroy session at the end of php:
     session_destroy();
     $sessionId = session_id() == "" ? "NULL" : session_id();

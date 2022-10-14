@@ -34,5 +34,6 @@ $selectedMovie["description"] = $row["description"];
 
 $_SESSION['movieTitle'] = $selectedMovie["title"];
 
+$db->close();
 
 ?>

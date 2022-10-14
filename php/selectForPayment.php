@@ -15,6 +15,8 @@ $row = $results->fetch_assoc();
 
 $imagePath = $row['imagePathForPayment'];
 
+$db->close();
+
 function getSelectedSeats()
 {
     $selectedSeats = implode(", ", $_SESSION['selectedSeats']);
