@@ -16,8 +16,7 @@ const validateCardHolder = (event) => {
     alert(
       "You have entered your name wrongly.\n You can only input characters and spaces.\n Please check again!"
     );
-    event.target.value = "";
-    event.target.focus();
+    event.target.select();
   }
 };
 
@@ -31,8 +30,7 @@ const validateCardNumber = (event) => {
     alert(
       "You have entered an invalid credit card number. \nPlease verify again."
     );
-    event.target.value = "";
-    event.target.focus();
+    event.target.select();
     return false;
   }
 };
@@ -58,8 +56,7 @@ const validateCvcNumber = (event) => {
 
   if (index != 0) {
     alert("You have entered an invalid CVC number. \nPlease verify again.");
-    event.target.value = "";
-    event.target.focus();
+    event.target.select();
   }
 };
 
@@ -71,8 +68,7 @@ const validateEmail = (event) => {
 
   if (index != 0) {
     alert("You have entered an invalid email. Please verify again.");
-    event.target.value = "";
-    event.target.focus();
+    event.target.select();
   }
 };
 
