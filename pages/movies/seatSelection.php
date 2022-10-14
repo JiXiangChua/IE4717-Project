@@ -10,7 +10,7 @@
         header('location: ' . $_SERVER['PHP_SELF']);
         exit;
     }
-
+    
     include ('../../php/selectOccupiedSeatsForMovie.php');
 
     $previouslySelectedSeats = array();
