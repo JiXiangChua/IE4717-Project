@@ -2,6 +2,13 @@
 include('./php/selectMoviesForHome.php');
 session_start();
 
+if (isset($_SESSION))
+{
+    //unset all session variables if it has values
+    session_destroy();
+    session_start();
+}
+
 ?>
 
 <html>
