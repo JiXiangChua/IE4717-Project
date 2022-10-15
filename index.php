@@ -92,6 +92,33 @@ if (isset($_SESSION))
                     </div>
                 </div>
             </div>
+            <div class="cinema-content-container">
+                <div class="cinema-hall-content">
+                    <img src="./images/pages/home/Cinema Seats.jpg">
+                    <div class="cinema-hall-content-description">
+                        <h3>Immersive, Enjoyable</h3>
+                        <p>Each theatre hall can accomdate up to 100 seats, designed by Figueras. Each seat is highly
+                            comfortable with
+                            generous dimensions. There is sufficient legroom between each row of
+                            seats, allowing you to view your movie in a more comfortable and relaxed position.
+                        </p>
+                    </div>
+                </div>
+                <div class="cinema-speakers-content">
+                    <video id="dolby-atmos" autoplay muted loop>
+                        <source src="./images/pages/home/Dolby_Atmos.mp4" type="video/mp4">
+                    </video>
+                    <div class="dolby-atmos-description">
+                        <h3>Experience the Best 7.1 Surround Sound </h3>
+                        <p>Be part of the storytelling with Dolby Atmos. <br> Embrace the one of a kind cinematic audio
+                            experience.
+                        </p>
+                    </div>
+                </div>
+                <div class="cinema-imax-content">
+                    <img src="./images/pages/home/imax.png">
+                </div>
+            </div>
         </div>
         <footer class="footer-container">
             <img id="cineverse-logo" src="./images/icons/cineverse_logo.png" alt="cineverse_logo">
