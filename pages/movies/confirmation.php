@@ -1,11 +1,11 @@
 <?php
     session_start();
 
-    // $name = $_POST['cardHolder']; //must use square brackets!!
-    // $cardNumber = $_POST['cardNumber'];
-    // $expiryDate = $_POST['expiryDate'];
-    // $cvcNumber = $_POST['cvc'];
-    // $email = $_POST['email'];
+    $name = $_POST['cardHolder']; //must use square brackets!!
+    $cardNumber = $_POST['cardNumber'];
+    $expiryDate = $_POST['expiryDate'];
+    $cvcNumber = $_POST['cvc'];
+    $email = $_POST['email'];
 
     include("../../php/createPurchaseOrder.php");
 
@@ -41,11 +41,9 @@
             <div class="confirmation-container">
                 <h1>Booking Success</h1>
                 <div id="transaction-id">
-                    <p>Transaction No: 000111</p>
-                    <!-- TODO: change T No to variable -->
+                    <p>Transaction No: <?php echo $orderid ?></p>
                     <br />
-                    <p>E-tickets have been sent to your e-mail: abc@abc.com</p>
-                    <!-- TODO: change email to variable -->
+                    <p>E-tickets have been sent to your e-mail: <?php echo $email ?></p>
                 </div>
                 <a href="../../index.php">
                     <button type="button" class="accent-button done-button">Done</button>

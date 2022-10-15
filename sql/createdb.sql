@@ -30,9 +30,31 @@ create table movieSessions
     FOREIGN KEY (movieid) REFERENCES movies(movieid)
 );
 
+create table orders 
+(
+    orderid int unsigned not null auto_increment primary key,
+    movieid int unsigned not null,
+    sessionid int unsigned not null,
+    FOREIGN KEY (movieid) REFERENCES movies(movieid),
+    FOREIGN KEY (sessionid) REFERENCES movieSessions(sessionid)
+);
+
 create table occupiedSeats 
 (
     sessionid int unsigned not null,
     seatNumber char(5) not null,
-    FOREIGN KEY (sessionid) REFERENCES movieSessions(sessionid)
+    orderid int unsigned not null,
+    FOREIGN KEY (sessionid) REFERENCES movieSessions(sessionid),
+    FOREIGN KEY (orderid) REFERENCES orders(orderid)
+);
+
+create table customers 
+(
+    orderid int unsigned not null auto_increment primary key,
+    `name` varchar(100) not null,
+    cardHolder varchar(100) not null,
+    cardNumber varchar(319) not null,
+    expiryDate varchar(10) not null,
+    cvc varchar(40),
+    email varchar(319)
 );
