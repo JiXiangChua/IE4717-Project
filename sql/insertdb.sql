@@ -35,3 +35,26 @@ insert into occupiedSeats values
 (1, "C15", 100000),
 (1, "E19", 100000),
 (1, "E20", 100000);
+
+-- NEW
+
+insert into upcomingMovies values 
+(1, "Us(R18)", "movie-us.jpg", "movie-us-large.png", 3, "NC16", 116, 2022, "In 1986, a young girl named Adelaide watches a commercial for Hands Across America. At night, at the Santa Cruz Beach Boardwalk, she wanders away from her parents and enters a funhouse, where she encounters a doppelgänger of herself in the house of mirrors. Following the encounter she stops speaking and withdraws from her family. Years later, an adult Adelaide goes on vacation with her husband, Gabriel "Gabe" Wilson, and their children Zora and Jason. She is apprehensive about the trip, but despite her misgivings, the family meet with their friends Josh and Kitty Tyler and their twin daughters at the beach. On the way there, they witness paramedics taking away the bloody body of an old man. Jason later sees someone strangely similar to the old man, standing still with his arms outstretched and hands bloody."),
+(2, "10 things I hate about you", "movie-hate.jpg","movie-10things-large.jpg",3,"PG13", 97, 1999, "Cameron James, a new student at Padua High School in the Seattle area, instantly falls in love with beautiful and popular sophomore Bianca Stratford. Geeky Michael Eckman warns him that Bianca is vapid and conceited, and that her overprotective father does not allow Bianca or her older sister, the shrewish Kat, to date. Kat, a senior, is accepted to Sarah Lawrence College in New York, but her father, Walter, wants her to stay close to home. Bianca wishes to date affluent senior Joey Donner, but Walter, an obstetrician worrisome of teenage pregnancy, will not allow his daughters to date until they graduate. Frustrated by Bianca's insistence and Kat's rebelliousness, Walter declares that Bianca may date only when Kat does, knowing that Kat's anti-social attitude makes this unlikely."),
+(3, "Jurassic Park", "movie-jurassic.jpg", "movie-jurassic-large.jpg",5, "PG13", 147, 2022, "Jurassic World Dominion is a 2022 American science fiction action film directed by Colin Trevorrow, who co-wrote the screenplay with Emily Carmichael from a story by Derek Connolly and Trevorrow. The sequel to Jurassic World: Fallen Kingdom (2018), it is the third and final installment in the Jurassic World trilogy as well as the sixth installment in the Jurassic Park franchise, concluding the storyline of the original Jurassic Park trilogy. The film has an ensemble cast, including Chris Pratt, Bryce Dallas Howard, Laura Dern, Jeff Goldblum, Sam Neill, DeWanda Wise, Mamoudou Athie, BD Wong, and Omar Sy. Dern, Goldblum, and Neill reprise their roles from the Jurassic Park trilogy, appearing together for the first time since the 1993 film."),
+(4, "007: No time to die", "movie-007.jpg", "movie-007-large.jpg",5, "PG13", 163, 2021, "No Time to Die is a 2021 spy film and the twenty-fifth in the James Bond series produced by Eon Productions, starring Daniel Craig in his fifth and final portrayal of fictional British MI6 agent James Bond. It was directed by Cary Joji Fukunaga from a screenplay by Neal Purvis, Robert Wade, Fukunaga and Phoebe Waller-Bridge. Léa Seydoux, Ben Whishaw, Naomie Harris, Jeffrey Wright, Christoph Waltz, Rory Kinnear and Ralph Fiennes reprise their roles from previous films, with Rami Malek, Lashana Lynch, Billy Magnussen, Ana de Armas, David Dencik and Dali Benssalah also starring. In No Time to Die, Bond has left active service with MI6 and is recruited by the CIA to find a kidnapped scientist, which leads to a showdown with a powerful adversary.");
+
+
+insert into food values 
+(null, "Combo Set A", 9.90, "set_1.png"),
+(null, "Combo Set B", 10.90, "set_2.png" ),
+(null, "Popcorn", 8.90, "popcorn.png"),
+(null, "Beef Burger", 8.90, "beef_burger.png"),
+(null, "Hot Dog", 7.90, "hotdog.png"),
+(null, "Soft Drink", 3.50, "softdrink.png"),
+(null, "Mineral Water", 2.00, "water.png"),
+(null, "Hot Tea", 2.90, "hot_tea.png");
+
+insert into orders values
+(987654321, 6,8),
+(123456789, 5, 3);
