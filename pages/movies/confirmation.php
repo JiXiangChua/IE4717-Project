@@ -8,6 +8,7 @@
     $email = $_POST['email'];
 
     include("../../php/createPurchaseOrder.php");
+    include("../../php/sendPurchaseOrderEmail.php");
 
     //Destroy session at the end of php:
     session_destroy();
