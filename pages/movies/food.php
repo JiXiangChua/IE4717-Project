@@ -129,7 +129,7 @@
                 <br><br>
                 <div class="buttons">
                     <button class="accent-button" onclick="location.href='../movies/seatSelection.html'">Back</button>
-                    <button class="primary-button" onclick="location.href='../movies/payment.html' ">Next</button>
+                    <button class="primary-button" onclick="location.href='../movies/payment.php' ">Next</button>
                 </div>
             </div>
         </div>
