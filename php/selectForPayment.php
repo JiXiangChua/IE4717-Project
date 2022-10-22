@@ -81,4 +81,47 @@ function generatePurchaseTable()
     echo "</table>";
 }
 
+function gneeratePurchaseTableForEmail() {
+    $purchases = array();
+    $outputHtml = "";
+
+    // Generate individual purchase items
+    $ticketsPurchase = array();
+    $ticketsPurchase["item"] = "Standard Movie Ticket";
+    $ticketsPurchase["qty"] = count($_SESSION['selectedSeats']);
+    $ticketsPurchase["cost"] = 10;
+
+    //Push all the user purchases into the purchases array
+    array_push($purchases, $ticketsPurchase);
+
+    $outputHtml .= "<table class='invoice-table'>";
+    $outputHtml .= "<tr class='row-bottom-border'>";
+    $outputHtml .= "<td class='item-header-column'>Item</td>";
+    $outputHtml .= "<td class='qty-header-column'>Qty</td>";
+    $outputHtml .= "<td class='cost-header-column'>Unit Cost</td>";
+    $outputHtml .= "</tr>";
+
+    foreach ($purchases as $purchase)
+    {
+        $outputHtml .= "<tr>";
+        $outputHtml .= "<td class='item-column'>" . $purchase["item"] . "</td>";
+        $outputHtml .= "<td class='qty-column'>" . $purchase["qty"] . "</td>";
+        $outputHtml .= "<td class='cost-column'>" . $purchase["cost"] . "</td>";
+        $outputHtml .= "</tr>";
+    }
+
+    $totalCost = array_reduce($purchases, function ($sum, $current) {
+        return $sum += ($current["qty"] * $current["cost"]);
+    }, 0);
+
+    $outputHtml .= "<tr class='row-top-border'>";
+    $outputHtml .= "<td class='item-column'></td>";
+    $outputHtml .= "<td class='qty-column'>Total</td>";
+    $outputHtml .= "<td class='cost-column'>S$ $totalCost</td>";
+    $outputHtml .= "</tr>";
+    $outputHtml .= "</table>";
+
+    return $outputHtml;
+}
+
 ?>
