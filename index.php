@@ -15,7 +15,7 @@ if (isset($_SESSION))
 
 <head>
     <meta charset="utf-8">
-    <title>Cineverse - Movie Tickets</title>
+    <title>Welcome to Cineverse</title>
     <link rel="stylesheet" href="./styles/globals/main.css">
     <link rel="stylesheet" href="./styles/pages/home.css">
     <script src="./scripts/globals/navBarActiveLink.js" defer></script>
