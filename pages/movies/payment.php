@@ -125,7 +125,7 @@ include('../../php/selectForPayment.php');
                 </form>
                 <div class="buttons-container">
                     <!-- To remove this link later -->
-                    <a href="../../pages/movies/confirmation.php">
+                    <a href="../../pages/movies/food.php">
                         <button class="accent-button">Back</button>
                     </a>
                     <input form="payment-form" type="submit" value="Pay" class="primary-button">
