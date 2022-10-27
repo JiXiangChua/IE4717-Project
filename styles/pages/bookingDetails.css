@@ -129,16 +129,19 @@ body {
 .total_price {
   display: flex;
   flex-direction: row;
-  padding-left: 70%;
+  width: 280px;
+  justify-content: space-between;
+  align-self: flex-end;
+  padding-right: 2%;
 }
 
 .total_price h5 {
   color: white;
-  font-size: 35px;
+  font-size: 25px;
 }
 
 .price_value {
-  padding-left: 20%;
+  /* padding-left: 35%; */
 }
 
 .buttons-container {

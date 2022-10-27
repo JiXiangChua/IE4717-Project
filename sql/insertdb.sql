@@ -13,12 +13,6 @@ insert into movies values
 (10, "Moonlight", "movie-moonlight.jpg", "movie-moonlight-large.png", "movie-moonlight-large.png", "movie-moonlight.jpg", 4, "NC16", 111, 2016, "In Liberty City, Miami at the height of the crack epidemic, Afro-Cuban drug dealer Juan finds Chiron, a withdrawn child who goes by the nickname \"Little,\" hiding from a group of bullies in a crackhouse. He lets Chiron spend the night with him and his girlfriend Teresa before returning Chiron to his mother Paula, who revokes his TV privileges as punishment for worrying her. Chiron continues to spend time with Juan, who teaches him how to swim and mentors him, telling him he can choose his own path in life."),
 (11, "The Martian", "movie-bringmehome.jpg", "movie-bringmehome-large.jpeg", "movie-bringmehome-large.jpeg", "movie-bringmehome.jpg", 4.3, "PG13", 141, 2015, "In 2035, the crew of the Ares III mission to Mars is exploring Acidalia Planitia on Martian solar day (sol) 18 of their 31-sol expedition. A severe dust storm threatens to topple their Mars Ascent Vehicle (MAV). The mission is scrubbed, but as the crew evacuates, astronaut Mark Watney is struck by debris. The telemetry from his suit's bio-monitor is damaged and Watney is erroneously presumed dead. With the MAV (Mars Ascent Vehicle) on the verge of toppling, the remaining crew takes off for their orbiting vessel, the Hermes.");
 
-insert into upcomingMovies values 
-(1, "Us(R18)", "movie-us.jpg"),
-(2, "10 things I hate about you", "movie-hate.jpg"),
-(3, "Jurassic Park", "movie-jurassic.jpg"),
-(4, "007: No time to die", "movie-007.jpg");
-
 insert into movieSessions values 
 (NULL, 1, "Jurong", "14/10", "10:00"),
 (NULL, 1, "Orchard", "14/10", "10:00"),
@@ -55,12 +49,8 @@ insert into food values
 (null, "Mineral Water", 2.00, "water.png"),
 (null, "Hot Tea", 2.90, "hot_tea.png");
 
-insert into orders values
-(987654321, 6,8),
-(123456789, 5, 3);
-
 -- purchasedFood: foodid orderid quantity
 insert into purchasedFood values
-(1,987654321,2),
-(4,987654321,2);
+(1,100000,2),
+(4,100000,2);
 

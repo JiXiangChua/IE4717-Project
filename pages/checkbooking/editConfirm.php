@@ -29,9 +29,9 @@ include "../../php/updateForEditSeat.php";
         </nav>
         <div class="container">
             <div class="confirmation-container">
-                <h1>Booking Edit Confirmed</h1>
+                <h1>Your changes have been confirmed</h1>
                 <div id="transaction-id">
-                    <p>Transaction No: <b><?php echo $orderid ?><b></p>
+                    <p style="font-size: 1.75em;">Your Transaction No: <b><?php echo $orderid ?><b></p>
                     <br />
                 </div>
                 <a href="../../index.php">
