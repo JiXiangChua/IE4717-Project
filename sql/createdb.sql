@@ -49,7 +49,8 @@ create table customers
     cardNumber varchar(319) not null,
     expiryDate varchar(10) not null,
     cvc varchar(40),
-    email varchar(319)
+    email varchar(319),
+    FOREIGN KEY (orderid) REFERENCES orders(orderid)
 );
 
 create table upcomingMovies
