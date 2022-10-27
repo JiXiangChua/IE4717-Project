@@ -108,7 +108,10 @@ include('../../php/selectForPayment.php');
                     <div class="card-number-container">
                         <label for="card-number">Card Number</label>
                         <input id="card-number" name="cardNumber" class="" type="number"
-                            placeholder="Enter without '-' and space in between the numbers" required>
+                            placeholder="Enter without '-' and space in between the numbers" required oninput="this.value = 
+                                    !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null"
+                                    onkeypress="if (this.value.length >= this.maxLength) this.value = this.value.slice(0, this.maxLength-1);"
+                                    maxlength="16">
                     </div>
                     <div class="expiry-date-container">
                         <label for="expiry-date">Expiry Date</label>
@@ -116,7 +119,10 @@ include('../../php/selectForPayment.php');
                     </div>
                     <div class="cvc-container">
                         <label for="cvc">CVC Number</label>
-                        <input id="cvc" name="cvc" class="" type="number" placeholder="CVC" required>
+                        <input id="cvc" name="cvc" class="" type="number" placeholder="CVC" required oninput="this.value = 
+                                    !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null"
+                                    onkeypress="if (this.value.length >= this.maxLength) this.value = this.value.slice(0, this.maxLength-1);"
+                                    maxlength="3">
                     </div>
                     <div class="email-container">
                         <label for="email">Email</label>
