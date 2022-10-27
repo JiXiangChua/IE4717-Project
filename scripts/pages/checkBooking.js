@@ -6,7 +6,7 @@ input.addEventListener("change", validation, false);
 
 function validation(event) {
   var input_number = event.currentTarget;
-  var regNumber = input_number.value.search(/^[0-9]{9}$/);
+  var regNumber = input_number.value.search(/^[0-9]{6}$/);
 
   if (regNumber != 0) {
     console.log("check");

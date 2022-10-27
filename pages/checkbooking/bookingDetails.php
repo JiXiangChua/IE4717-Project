@@ -1,46 +1,8 @@
 <?php
-include "../../php/connectDB.php";
+include "../../php/selectForBookingDetails.php";
 
-$transcation_number = $_POST["transaction_number"];
-//echo '<script>console.log('.$transcation_number.'); </script>';
 
-$sql_order = "SELECT * FROM orders where orderid = ".$transcation_number." ";
-$result_order = $db->query($sql_order);
-$order = array();
-
-if ($result_order->num_rows > 0) {
-    $orderDetails = array();
-
-    while($row = $result_order->fetch_assoc()) {
-    
-        $orderDetails["id"] = $row["orderid"];
-        $orderDetails["movie"]=$row["movieid"];
-        $orderDetails["session"] = $row["sessionid"];
-      echo "<script>console.log(" .$orderDetails["movie"]. "); </script>";
-      array_push($order, $orderDetails);
-    }
-}
-
-//print_r ($order);
-//echo "<script>console.log(" .$order[0]["movie"]. "); </script>";
-
-$sql_order2 = "SELECT * FROM movies where movieid = ".$order[0]["movie"]." ";
-$result_order2 = $db->query($sql_order2);
-$movie_booked = array();
-
-if ($result_order2->num_rows > 0) {
-    $movieDetails = array();
-
-    while($row = $result_order2->fetch_assoc()) {
-    
-        $movieDetails["id"] = $row["movieid"];
-        $movieDetails["title"]=$row["title"];
-        $movieDetails["image"]= $row["imagePathForPayment"];
-      echo "<script>console.log(" .$movieDetails["id"]. "); </script>";
-      array_push($movie_booked, $movieDetails);
-    }
-}
-
+//getting the session belong to the order
 ?>
 
 <html>
@@ -109,37 +71,90 @@ if ($result_order2->num_rows > 0) {
                             </tr>
                             <tr>
                                 <td>Standard Week Day Ticket</td>
-                                <td>2</td>
-                                <td>10.00</td>
+                                <td>
+                                <?php
+                                    echo count($session);
+                                    ?>
+                                </td>
+                                <td>
+                                <?php
+                                    $ticket_price = count($session) * 10;
+                                    echo number_format($ticket_price,2);
+                                    
+                                    ?>
+                                </td>
                             </tr>
                             <tr>
-                                <td>(Seats: D1, D2)</td>
+                                <td>(Seats: <span>
+                                <?php
+                                    //echo count($);
+                                    echo "<script>console.log('zhaosheng debug');</script>";
+                                    for ($i=0; $i<count($session); $i++){
+                                        echo $session[$i]["seat"];
+                                        if ($i < count($session)-1){
+                                            echo "&nbsp;";
+                                            echo ",";
+                                        }
+                                    }
+                                    ?>
+                                </span>)</td>
                             </tr>
-                            <tr>
-                                <td>Popcorn</td>
-                                <td>1</td>
-                                <td>8.90</td>
-                            </tr>
-                            <tr>
-                                <td>Soft Drinks</td>
-                                <td>1</td>
-                                <td>3.50</td>
-                            </tr>
+
+                            <?php
+                            $food_info = array();
+                            $cost = 0;
+                            $food_total_cost = 0;
+                            for($i=0; $i< count($food); $i++){
+                                
+                                $sql_order5 = "SELECT * FROM food where foodid= ".$food[$i]["foodid"]." ";
+                                $result_order5 = $db->query($sql_order5);
+                                if ($result_order5->num_rows > 0) {
+                                    $food_title_price = array();
+                                    while($row = $result_order5->fetch_assoc()) {
+                                        $food_title_price["food"]=$row["foodName"];
+                                        $food_title_price["price"] = $row["price"];
+                                        array_push($food_info, $food_title_price);
+                                    }
+                                }
+                                $cost = $food[$i]["quantity"] * $food_info[$i]["price"];
+                                echo "<script>console.log(".$food[0].")</script>";                   
+                                echo "<tr>";
+                                echo "<td> ".$food_info[$i]["food"]."</td>";
+                                echo "<td> ".$food[$i]["quantity"]." </td>";
+                                echo "<td> ".number_format($cost,2)." </td>";
+                                $food_total_cost += $cost;
+                            }
+
+                            ?>
+                            
                         </table>
                         <hr>
 
                         <div class="total_price">
                             <h5>Total: </h5>
-                            <h5 class="price_value">32.4</h5>
+                            <h5 class="price_value" id="total_price">
+                                <?php
+                                $total_price = $food_total_cost + $ticket_price;
+                                echo number_format($total_price,2);
+                                ?>
+                            </h5>
                         </div>
                     </div>
 
+                    <form action="editSeatSelection.php" method="POST">
+                            <input type="number" name= "orderid" value = <?php
+                                echo $order[0]["id"];
+                            ?>
+                             hidden>
+                    
+
                     <div class="buttons-container">
-                        <button onclick="location.href='../checkbooking/seatSelection.html'"
-                            class="accent-button">Edit</button>
-                        <button onclick="location.href='../../index.html'" class="primary-button">Done</button>
+                        <input type="submit" value="Edit" onclick="location.href='../checkbooking/editSeatSelection.php'"
+                            class="accent-button"></input>
+                        <input type="button" onclick="location.href='../../index.html'" class="primary-button" value="Done"></input>
 
                     </div>
+                    </form>
                 </div>
             </div>
         </div>

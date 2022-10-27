@@ -89,7 +89,7 @@ if (isset($_SESSION))
                         <?php
                         for($i=0;$i<count($comingSoon);$i++){
                         $movie_card = $comingSoon[$i];
-                        echo "<a href='../../pages/movies/movieDetails.php?movieid=" . $movie_card["id"] . "' style='text-decoration: none'>";
+                        echo "<a href='../../pages/movies/upcomingMovieDetails.php?movieid=" . $movie_card["id"] . "' style='text-decoration: none'>";
                         echo "<div class='movie_card' id='".$movie_card["id"]."'>";
                         echo "<div class='movie_img'>";
                         echo "<img src='../../images/pages/movies/".$movie_card["image"]."'>";

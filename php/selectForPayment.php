@@ -1,6 +1,7 @@
 <?php
 
 include('connectDB.php');
+include "selectFoodForPayment.php";
 
 session_start();
 // var_dump($_SESSION);
@@ -23,45 +24,47 @@ function getSelectedSeats()
     echo $selectedSeats;
 }
 
-function generatePurchaseTable()
-{
-    $purchases = array();
+// function generatePurchaseTable()
+// {
+//     $purchases = array();
 
-    // Generate individual purchase items
-    $ticketsPurchase = array();
-    $ticketsPurchase["item"] = "Standard Movie Ticket";
-    $ticketsPurchase["qty"] = count($_SESSION['selectedSeats']);
-    $ticketsPurchase["cost"] = 10;
+//     // Generate individual purchase items
+//     $ticketsPurchase = array();
+//     $ticketsPurchase["item"] = "Standard Movie Ticket";
+//     $ticketsPurchase["qty"] = count($_SESSION['selectedSeats']);
+//     $ticketsPurchase["cost"] = 10;
 
-    //Push all the user purchases into the purchases array
-    array_push($purchases, $ticketsPurchase);
+//     $foodPurchase = array();
 
-    echo "<table class='invoice-table'>";
-    echo "<tr class='row-bottom-border'>";
-    echo "<td class='item-header-column'>Item</td>";
-    echo "<td class='qty-header-column'>Qty</td>";
-    echo "<td class='cost-header-column'>Unit Cost</td>";
-    echo "</tr>";
+//     //Push all the user purchases into the purchases array
+//     array_push($purchases, $ticketsPurchase);
 
-    foreach ($purchases as $purchase)
-    {
-        echo "<tr>";
-        echo "<td class='item-column'>" . $purchase["item"] . "</td>";
-        echo "<td class='qty-column'>" . $purchase["qty"] . "</td>";
-        echo "<td class='cost-column'>" . $purchase["cost"] . "</td>";
-        echo "</tr>";
-    }
+//     echo "<table class='invoice-table'>";
+//     echo "<tr class='row-bottom-border'>";
+//     echo "<td class='item-header-column'>Item</td>";
+//     echo "<td class='qty-header-column'>Qty</td>";
+//     echo "<td class='cost-header-column'>Unit Cost</td>";
+//     echo "</tr>";
 
-    $totalCost = array_reduce($purchases, function ($sum, $current) {
-        return $sum += ($current["qty"] * $current["cost"]);
-    }, 0);
+//     foreach ($purchases as $purchase)
+//     {
+//         echo "<tr>";
+//         echo "<td class='item-column'>" . $purchase["item"] . "</td>";
+//         echo "<td class='qty-column'>" . $purchase["qty"] . "</td>";
+//         echo "<td class='cost-column'>" . $purchase["cost"] . "</td>";
+//         echo "</tr>";
+//     }
 
-    echo "<tr class='row-top-border'>";
-    echo "<td class='item-column'></td>";
-    echo "<td class='qty-column'>Total</td>";
-    echo "<td class='cost-column'>S$ $totalCost</td>";
-    echo "</tr>";
-    echo "</table>";
-}
+//     $totalCost = array_reduce($purchases, function ($sum, $current) {
+//         return $sum += ($current["qty"] * $current["cost"]);
+//     }, 0);
+
+//     echo "<tr class='row-top-border'>";
+//     echo "<td class='item-column'></td>";
+//     echo "<td class='qty-column'>Total</td>";
+//     echo "<td class='cost-column'>S$ $totalCost</td>";
+//     echo "</tr>";
+//     echo "</table>";
+// }
 
 ?>

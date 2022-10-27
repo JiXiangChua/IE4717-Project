@@ -3,7 +3,9 @@
 
 var increment_button = document.getElementsByClassName("counter_button_inc");
 var decrement_button = document.getElementsByClassName("counter_button_dec");
-// console.log(increment_button);
+var food_selected = document.getElementById("foodSelected");
+
+var food_array = new Array();
 
 function button_clicked() {
   for (j = 0; j < decrement_button.length; j++) {
@@ -20,6 +22,10 @@ function button_clicked() {
         new_value = 0;
       }
       input.value = new_value;
+      food_array["id"] = input.getAttribute("id");
+      food_array["quantity"] = new_value;
+      //console.log(food_array);
+      food_selected.value = food_array;
     });
   }
 
@@ -41,8 +47,21 @@ function button_clicked() {
       // based on the value + 1 to achieve the increment
       input.value = new_value;
       // write the number after increment to the input textbox
+      food_array["id"] = input.getAttribute("id");
+      food_array["quantity"] = new_value;
+      //console.log(food_array);
+      food_selected.value = food_array;
     });
   }
 }
+
+food_selected.addEventListener("change", showValue, false);
+
+function showValue(event) {
+  var result = event.currentTarget;
+  console.log(result.value);
+}
+
+console.log(food_selected.value);
 
 window.onload = button_clicked;

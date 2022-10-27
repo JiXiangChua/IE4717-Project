@@ -81,3 +81,12 @@ create table food
     imagePath varchar(255) not null
 );
     
+
+create table purchasedFood
+(   
+    foodid int unsigned not null,
+    orderid int unsigned not null,
+    FOREIGN KEY (foodid) REFERENCES food (foodid),
+    quantity int not null,
+    FOREIGN KEY (orderid) REFERENCES orders(orderid)
+);

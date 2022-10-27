@@ -1,11 +1,10 @@
-<!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="utf-8">
-    <title>Cineverse - Promotions & Deals</title>
+    <title>Cineverse - Check booking</title>
     <link rel="stylesheet" href="../../styles/globals/main.css">
-    <link rel="stylesheet" href="../../styles/pages/promotion.css">
+    <link rel="stylesheet" href="../../styles/pages/checkbooking.css">
     <script src="../../scripts/globals/navBarActiveLink.js" defer></script>
 </head>
 
@@ -14,7 +13,7 @@
         <nav class="nav-container">
             <img id="cineverse-logo" src="../../images/icons/cineverse_logo.png" alt="cineverse_logo">
             <div class="nav-items">
-                <a class="active" href="../../index.php">Home</a>
+                <a class="active" href="../../index.html">Home</a>
                 <a href="../movies/movies.php">Movies</a>
                 <a href="../cinemas/cinema.html">Cinemas</a>
                 <a href="../promotions/promotion.html">Promotions</a>
@@ -22,15 +21,29 @@
             </div>
         </nav>
         <div class="container">
-            <div class="promo-container">
-                <h1>Promotions and Privileges</h1>
-                <div class="horizontal-scroll-container">
-                    <div id="promo-card-list">
-                        <!-- Render HTML components from javascript -->
+            <h1>Check Booking</h1>
+
+            <div class="form">
+
+                <p class="text">The trascation number you entered is not existed.<p>
+                <form method="post" action="bookingDetails.php">
+
+                    <div class="input">
+                        <input type="text" class="search_input" id="transaction_number" placeholder="Transcation Number"
+                            name="transaction_number">
+
                     </div>
-                </div>
+
+                    <div class="buttons">
+                        <input type="submit" class="submit_button" value="Search">
+                    </div>
+
+
+                </form>
             </div>
         </div>
+
+
         <footer class="footer-container">
             <img id="cineverse-logo" src="../../images/icons/cineverse_logo.png" alt="cineverse_logo">
             <div class="link-container">
@@ -46,7 +59,7 @@
             <p>&copy; COPYRIGHT 2022 IE4717 F38-DG05 | CHUA JI XIANG | TANG ZHAO SHENG </p>
         </footer>
     </div>
-    <script type="text/javascript" src="../../components/pages/promotionCardList.js"></script>
+    <script type="text/javascript" src="../../scripts/pages/checkBooking.js"></script>
 </body>
 
 </html>

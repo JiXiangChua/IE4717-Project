@@ -1,5 +1,9 @@
 <?php
 include('../../php/selectForPayment.php');
+include("../../php/selectFoodForPayment.php");
+
+
+
 ?>
 <html>
 
@@ -65,38 +69,82 @@ include('../../php/selectForPayment.php');
                 <h2>Snacks & Drinks</h2>
                 <div class="horizontal-scroll-container">
                     <div id="snack-list">
-                        <div class="snack-card">
+                        <?php
+
+                        for($i=0;$i<count($display_food);$i++){
+                            
+                            echo '<div class="snack-card">';
+                            echo " <img src='../../images/pages/movies/".$display_food[$i]["image"]."' >" ;
+                            echo '<p>'.$display_food[$i]["title"].'</p>';
+                            echo '<div class="snack-quantity-card">'.$display_food[$i]["quantity"].'</div>';
+                            echo '</div>';
+                        }
+
+                        ?>
+
+                        <!-- <div class="snack-card">
                             <img src="../../images/pages/movies/beef_burger.png" alt="">
                             <p>Combo Set A</p>
                             <div class="snack-quantity-card">1</div>
-                        </div>
-                        <div class="snack-card">
-                            <img src="../../images/pages/movies/beef_burger.png" alt="">
-                            <p>Combo Set A</p>
-                            <div class="snack-quantity-card">1</div>
-                        </div>
-                        <div class="snack-card">
-                            <img src="../../images/pages/movies/beef_burger.png" alt="">
-                            <p>Combo Set A</p>
-                            <div class="snack-quantity-card">1</div>
-                        </div>
-                        <div class="snack-card">
-                            <img src="../../images/pages/movies/beef_burger.png" alt="">
-                            <p>Combo Set A</p>
-                            <div class="snack-quantity-card">1</div>
-                        </div>
-                        <div class="snack-card">
-                            <img src="../../images/pages/movies/beef_burger.png" alt="">
-                            <p>Combo Set A</p>
-                            <div class="snack-quantity-card">1</div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
             <div class="invoice-container">
                 <h2>Your Purchases</h2>
                 <div id="table-container"></div>
-                <?php generatePurchaseTable() ?>
+                <?php 
+                    //generatePurchaseTable() 
+
+                    $purchases = array();
+
+                    // Generate individual purchase items
+                    $ticketsPurchase = array();
+                    $ticketsPurchase["item"] = "Standard Movie Ticket";
+                    $ticketsPurchase["qty"] = count($_SESSION['selectedSeats']);
+                    $ticketsPurchase["cost"] = 10;
+
+                    $foodPurchase = array();
+                    //print_r($display_food);
+
+                    array_push($purchases, $ticketsPurchase);
+
+                    for($i=0;$i<count($display_food);$i++){
+                        $foodPurchase["item"] = $display_food[$i]["title"];
+                        $foodPurchase["qty"] = $display_food[$i]["quantity"];
+                        $foodPurchase["cost"] = $display_food[$i]["price"];
+                        array_push($purchases, $foodPurchase);
+                    }
+
+                    echo "<table class='invoice-table'>";
+                    echo "<tr class='row-bottom-border'>";
+                    echo "<td class='item-header-column'>Item</td>";
+                    echo "<td class='qty-header-column'>Qty</td>";
+                    echo "<td class='cost-header-column'>Unit Cost</td>";
+                    echo "</tr>";
+
+                    foreach ($purchases as $purchase)
+                    {
+                        echo "<tr>";
+                        echo "<td class='item-column'>" . $purchase["item"] . "</td>";
+                        echo "<td class='qty-column'>" . $purchase["qty"] . "</td>";
+                        echo "<td class='cost-column'>" . $purchase["cost"] . "</td>";
+                        echo "</tr>";
+                    }
+
+                    $totalCost = array_reduce($purchases, function ($sum, $current) {
+                        return $sum += ($current["qty"] * $current["cost"]);
+                    }, 0);
+
+                    echo "<tr class='row-top-border'>";
+                    echo "<td class='item-column'></td>";
+                    echo "<td class='qty-column'>Total</td>";
+                    echo "<td class='cost-column'>S$ $totalCost</td>";
+                    echo "</tr>";
+                    echo "</table>";
+
+                    //print_r($purchases);
+                ?>
             </div>
             <div class="payment-container">
                 <h1>Payment</h1>

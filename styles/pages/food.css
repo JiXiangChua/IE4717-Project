@@ -67,7 +67,7 @@ body {
   background-color: transparent;
   color: white;
   border: none;
-  font-size: 40px;
+  font-size: 50px;
   padding: 0 30px;
   cursor: pointer;
 }
@@ -76,7 +76,7 @@ body {
   background-color: transparent;
   color: white;
   border: none;
-  font-size: 40px;
+  font-size: 50px;
   padding: 0 30px;
   cursor: pointer;
 }
@@ -104,14 +104,20 @@ body {
 }
 
 .buttons {
-  display: inline-flex;
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
+  -webkit-justify-content: space-between;
   text-align: center;
-  width: 80%;
+  width: 100%;
   margin-top: 8%;
   padding: 0 5%;
 }
+
+.accent-button{
+  margin-right: 950px;
+}
+
 
 /* .back_button{
     border: 3px solid #F83600;
