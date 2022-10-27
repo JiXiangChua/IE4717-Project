@@ -13,13 +13,6 @@ create table movies
     description text not null
 );
 
-create table upcomingMovies
-(
-    movieid int unsigned not null auto_increment primary key,
-    title varchar(100) not null,
-    imagePath varchar(255) not null
-);
-
 create table movieSessions
 (
     sessionid int unsigned not null auto_increment primary key,

@@ -10,6 +10,8 @@
     $movieid = $_SESSION['movieid'];
     $hashCardNumber = md5($cardNumber);
     $hashCvc = md5($cvcNumber);
+    $food = $_SESSION["selectedFood"];
+
 
     //1. create a new order id and retrieve the id:
     $query = "INSERT INTO orders values (NULL, $movieid, $sessionid);";
@@ -32,6 +34,12 @@
         $query.= "INSERT INTO occupiedSeats
         VALUES ('$sessionid','$seat', '$orderid');";
     }
+
+    for($i=0;$i<count($food);$i++){
+        $query.= "INSERT INTO purchasedFood VALUES (".$food[$i]["foodid"].", '$orderid', ".$food[$i]["quantity"].");";
+    }
+
+    
 
     if (mysqli_multi_query($db, $query)) {
         echo "<script>console.log('New purchase order created successfully')</script>";

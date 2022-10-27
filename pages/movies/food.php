@@ -1,12 +1,13 @@
 <?php
     include ("../../php/selectForFood.php");
     session_start();
-    $selectedSeatsString = $_POST['confirm-seats']; 
-    $selectedSeatsArray = explode('-', $selectedSeatsString);
-    $_SESSION['selectedSeats'] = $selectedSeatsArray;
+    if (isset($_POST["confirm-seats"])){
+        $selectedSeatsString = $_POST['confirm-seats']; 
+        $selectedSeatsArray = explode('-', $selectedSeatsString);
+        $_SESSION['selectedSeats'] = $selectedSeatsArray;
+    }
+    
 
-
-    //Session to be done
 ?>
 
 <html>
@@ -80,7 +81,7 @@
                             echo "<img src='../../images/pages/movies/".$food_card["image"]."'>";
                             echo "</div>";
                             echo " <div class='item_price'>";
-                            echo "<h5> $".$food_card["title"]." <br> $".$food_card["price"]."</h5>";
+                            echo "<h5> ".$food_card["title"]." <br> $".$food_card["price"]."</h5>";
                             echo "</div>";
                             echo "<div class='quantity_counter'>";
                             echo "<input type='button' class='counter_button_dec'  id='setA-' value='-'></input>";
@@ -107,7 +108,7 @@
                             echo "<img src='../../images/pages/movies/".$food_card["image"]."'>";
                             echo "</div>";
                             echo " <div class='item_price'>";
-                            echo "<h5> $".$food_card["title"]." <br> $".$food_card["price"]."</h5>";
+                            echo "<h5> ".$food_card["title"]." <br> $".$food_card["price"]."</h5>";
                             echo "</div>";
                             echo "<div class='quantity_counter'>";
                             echo "<input type='button' class='counter_button_dec'  id='setA-' value='-' ></input>";

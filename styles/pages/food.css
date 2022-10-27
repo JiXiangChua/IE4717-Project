@@ -1,11 +1,11 @@
 body {
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
   /* margin: 0 0; */
 }
 
-.container {
-  /* padding-left: 30px; */
-}
+/* .container {
+   padding-left: 30px;
+} */
 
 .food {
   display: flex;
@@ -111,11 +111,6 @@ body {
   text-align: center;
   width: 100%;
   margin-top: 8%;
-  padding: 0 5%;
-}
-
-.accent-button{
-  margin-right: 950px;
 }
 
 

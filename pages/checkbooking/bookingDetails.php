@@ -2,7 +2,6 @@
 include "../../php/selectForBookingDetails.php";
 
 
-//getting the session belong to the order
 ?>
 
 <html>
@@ -88,7 +87,6 @@ include "../../php/selectForBookingDetails.php";
                                 <td>(Seats: <span>
                                 <?php
                                     //echo count($);
-                                    echo "<script>console.log('zhaosheng debug');</script>";
                                     for ($i=0; $i<count($session); $i++){
                                         echo $session[$i]["seat"];
                                         if ($i < count($session)-1){
@@ -96,6 +94,7 @@ include "../../php/selectForBookingDetails.php";
                                             echo ",";
                                         }
                                     }
+                                    
                                     ?>
                                 </span>)</td>
                             </tr>
@@ -135,23 +134,38 @@ include "../../php/selectForBookingDetails.php";
                             <h5 class="price_value" id="total_price">
                                 <?php
                                 $total_price = $food_total_cost + $ticket_price;
-                                echo number_format($total_price,2);
+                                echo "S$".number_format($total_price,2);
                                 ?>
                             </h5>
                         </div>
                     </div>
 
+
                     <form action="editSeatSelection.php" method="POST">
-                            <input type="number" name= "orderid" value = <?php
+                            <input type="hidden" name= "orderid" value = <?php
                                 echo $order[0]["id"];
                             ?>
                              hidden>
+
+                             <input type="number" name= "movieid" value = <?php
+                                echo $movie_booked[0]["id"];
+                            ?>
+                             hidden>
+
+                             <input type="number" name= "sessionid" value = <?php
+                                echo $session[0]["sessionid"];
+                            ?>
+                             hidden>
+
+                            
+
+                             
                     
 
                     <div class="buttons-container">
                         <input type="submit" value="Edit" onclick="location.href='../checkbooking/editSeatSelection.php'"
                             class="accent-button"></input>
-                        <input type="button" onclick="location.href='../../index.html'" class="primary-button" value="Done"></input>
+                        <input type="button" onclick="location.href='../../index.php'" class="primary-button" value="Done"></input>
 
                     </div>
                     </form>

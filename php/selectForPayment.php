@@ -1,10 +1,13 @@
 <?php
 
 include('connectDB.php');
-include "selectFoodForPayment.php";
+
+
 
 session_start();
 // var_dump($_SESSION);
+
+include("../../php/selectFoodForPayment.php");
 
 $query = "SELECT * from movies where movieid='" . $_SESSION['movieid'] . "';";
 $stmt = $db->prepare($query);
@@ -24,47 +27,58 @@ function getSelectedSeats()
     echo $selectedSeats;
 }
 
-// function generatePurchaseTable()
-// {
-//     $purchases = array();
 
-//     // Generate individual purchase items
-//     $ticketsPurchase = array();
-//     $ticketsPurchase["item"] = "Standard Movie Ticket";
-//     $ticketsPurchase["qty"] = count($_SESSION['selectedSeats']);
-//     $ticketsPurchase["cost"] = 10;
 
-//     $foodPurchase = array();
+function generatePurchaseTable()
+{
+    $purchases = array();
 
-//     //Push all the user purchases into the purchases array
-//     array_push($purchases, $ticketsPurchase);
+    // Generate individual purchase items
+    $ticketsPurchase = array();
+    $ticketsPurchase["item"] = "Standard Movie Ticket";
+    $ticketsPurchase["qty"] = count($_SESSION['selectedSeats']);
+    $ticketsPurchase["cost"] = number_format(10, 2);
 
-//     echo "<table class='invoice-table'>";
-//     echo "<tr class='row-bottom-border'>";
-//     echo "<td class='item-header-column'>Item</td>";
-//     echo "<td class='qty-header-column'>Qty</td>";
-//     echo "<td class='cost-header-column'>Unit Cost</td>";
-//     echo "</tr>";
+    //Push all the user purchases into the purchases array
+    array_push($purchases, $ticketsPurchase);
 
-//     foreach ($purchases as $purchase)
-//     {
-//         echo "<tr>";
-//         echo "<td class='item-column'>" . $purchase["item"] . "</td>";
-//         echo "<td class='qty-column'>" . $purchase["qty"] . "</td>";
-//         echo "<td class='cost-column'>" . $purchase["cost"] . "</td>";
-//         echo "</tr>";
-//     }
+    $display_food = $_SESSION["selectedFood"];
 
-//     $totalCost = array_reduce($purchases, function ($sum, $current) {
-//         return $sum += ($current["qty"] * $current["cost"]);
-//     }, 0);
+    $foodPurchase = array();
+    for($i=0;$i<count($display_food);$i++){
+        $foodPurchase["item"] = $display_food[$i]["title"];
+        $foodPurchase["qty"] = $display_food[$i]["quantity"];
+        $foodPurchase["cost"] = $display_food[$i]["price"];
+        array_push($purchases, $foodPurchase);
+    }
 
-//     echo "<tr class='row-top-border'>";
-//     echo "<td class='item-column'></td>";
-//     echo "<td class='qty-column'>Total</td>";
-//     echo "<td class='cost-column'>S$ $totalCost</td>";
-//     echo "</tr>";
-//     echo "</table>";
-// }
+
+    echo "<table class='invoice-table'>";
+    echo "<tr class='row-bottom-border'>";
+    echo "<td class='item-header-column'>Item</td>";
+    echo "<td class='qty-header-column'>Qty</td>";
+    echo "<td class='cost-header-column'>Unit Cost</td>";
+    echo "</tr>";
+
+    foreach ($purchases as $purchase)
+    {
+        echo "<tr>";
+        echo "<td class='item-column'>" . $purchase["item"] . "</td>";
+        echo "<td class='qty-column'>" . $purchase["qty"] . "</td>";
+        echo "<td class='cost-column'>" . $purchase["cost"] . "</td>";
+        echo "</tr>";
+    }
+
+    $totalCost = array_reduce($purchases, function ($sum, $current) {
+        return $sum += ($current["qty"] * $current["cost"]);
+    }, 0);
+
+    echo "<tr class='row-top-border'>";
+    echo "<td class='item-column'></td>";
+    echo "<td class='qty-column'>Total</td>";
+    echo "<td class='cost-column'>S$ ".number_format($totalCost, 2)."</td>";
+    echo "</tr>";
+    echo "</table>";
+}
 
 ?>

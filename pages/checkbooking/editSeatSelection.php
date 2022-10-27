@@ -1,63 +1,18 @@
 <?php
-include "../../php/connectDB.php";
-$orderid = $_POST["orderid"];
+
+$previouslySelectedSeats = array();
+include "../../php/selectOccupiedForEdit.php";
 
 
-$sql_order = "SELECT * FROM orders where orderid = ".$orderid." ";
-$result_order = $db->query($sql_order);
-$order = array();
-
-if ($result_order->num_rows > 0) {
-    $orderDetails = array();
-
-    while($row = $result_order->fetch_assoc()) {
-    
-        $orderDetails["id"] = $row["orderid"];
-        $orderDetails["movie"]=$row["movieid"];
-        $orderDetails["session"] = $row["sessionid"];
-      echo "<script>console.log(" .$orderDetails["id"]. "); </script>";
-      array_push($order, $orderDetails);
-    }
-}
-
-$sql_order2 = "SELECT * FROM movies where movieid = ".$order[0]["movie"]." ";
-$result_order2 = $db->query($sql_order2);
-$movie_booked = array();
-
-if ($result_order2->num_rows > 0) {
-    $movieDetails = array();
-
-    while($row = $result_order2->fetch_assoc()) {
-    
-        $movieDetails["id"] = $row["movieid"];
-        $movieDetails["title"]=$row["title"];
-        $movieDetails["image"]= $row["imagePathForPayment"];
-      array_push($movie_booked, $movieDetails);
-    }
-}
-
-$session = array();
-
-$sql_order3 = "SELECT * FROM occupiedSeats where orderid= ".$order[0]["id"]." ";
-$result_order3 = $db->query($sql_order3);
-if ($result_order3->num_rows > 0) {
-    $sessionDetails = array();
-
-    while($row = $result_order3->fetch_assoc()) {
-        $sessionDetails["seat"]=$row["seatNumber"];
-        $sessionDetails["sessionid"] = $row["sessionid"];
-      array_push($session, $sessionDetails);
-    }
-}
-
-
+    echo "<script>console.log(".$movieid.");</script>";
+    echo "<script>console.log(".$orderid.");</script>";
 
 ?>
 <html>
 
 <head>
     <meta charset="utf-8">
-    <title>Cineverse - Seat Selection</title>
+    <title>Cineverse - Edit Seat</title>
     <link rel="stylesheet" href="../../styles/globals/main.css">
     <link rel="stylesheet" href="../../styles/pages/movie-seat.css">
     <script src="../../scripts/globals/navBarActiveLink.js" defer></script>
@@ -79,20 +34,20 @@ if ($result_order3->num_rows > 0) {
             <div class="movie-container">
                 <div class="movie-detail-container">
                     <p id="movie-title">
-                        <?php
-                         echo $movie_booked[0]["title"];
-                         ?>
+                        <?php 
+                        echo $movieTitle;
+                        ?>
                     </p>
                     <div class="movie-detail-row">
                         <p id="movie-date">
-                            <?php 
-                            //echo str_replace("-", " / ", $_SESSION['date']) 
-                            echo $session[0]['seat'];
-                            ?>
+                            <?php echo $date; ?>
                         </p>
                         <p id="movie-time">
-                            <?php echo $_SESSION['time'] ?>
+                            <?php echo $time ?>
                         </p>
+                        <p>
+                        <?php echo $location ?>
+                        </P>
                     </div>
                 </div>
                 <div class="seat-plan-container">
@@ -237,13 +192,18 @@ if ($result_order3->num_rows > 0) {
                     <p id="selected-seats"></p>
                 </div>
                 <div class="button-container">
-                    <form method="POST" action="./food.php">
+                    <form method="POST" action="editConfirm.php">
                         <!-- This input is only used for restoring previously selected seats if any. This is not send to the POST -->
                         <input id="previous-selected-seats" type="hidden" value="<?php echo implode(", ", $previouslySelectedSeats) ?>">
                         <!-- This input is only used for retrieving occupied seats from database. This is not send to the POST -->
                         <input id="occupied-seats-db" type="hidden" value="<?php echo $occupiedSeatsString ?>">
+                        <input type="hidden" value="<?php  echo count($session) ?>" name="seat_count" id="seat_count">
+                        <input type="hidden"  value="<?php  echo $orderid ?>" name="orderid" id="orderid">
+                        <input type="hidden"  value="<?php  echo $session[0]['sessionid'] ?>" name="sessionid" id="sessionid">
                         <input id="submit-final-selected-seats" name="confirm-seats" type="hidden">
                         <input type="submit" value="Next" class="primary-button" id="next-button">
+
+
                     </form>
                 </div>
             </div>
@@ -263,7 +223,7 @@ if ($result_order3->num_rows > 0) {
             <p>&copy; COPYRIGHT 2022 IE4717 F38-DG05 | CHUA JI XIANG | TANG ZHAO SHENG </p>
         </footer>
     </div>
-    <script src="../../scripts/pages/seatSelectionForPhp.js"></script>
+    <script src="../../scripts/pages/editSeatForPhp.js"></script>
 </body>
 
 </html>

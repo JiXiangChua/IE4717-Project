@@ -1,7 +1,5 @@
 <?php
 include('../../php/selectForPayment.php');
-include("../../php/selectFoodForPayment.php");
-
 
 
 ?>
@@ -94,54 +92,8 @@ include("../../php/selectFoodForPayment.php");
                 <h2>Your Purchases</h2>
                 <div id="table-container"></div>
                 <?php 
-                    //generatePurchaseTable() 
+                    generatePurchaseTable();
 
-                    $purchases = array();
-
-                    // Generate individual purchase items
-                    $ticketsPurchase = array();
-                    $ticketsPurchase["item"] = "Standard Movie Ticket";
-                    $ticketsPurchase["qty"] = count($_SESSION['selectedSeats']);
-                    $ticketsPurchase["cost"] = 10;
-
-                    $foodPurchase = array();
-                    //print_r($display_food);
-
-                    array_push($purchases, $ticketsPurchase);
-
-                    for($i=0;$i<count($display_food);$i++){
-                        $foodPurchase["item"] = $display_food[$i]["title"];
-                        $foodPurchase["qty"] = $display_food[$i]["quantity"];
-                        $foodPurchase["cost"] = $display_food[$i]["price"];
-                        array_push($purchases, $foodPurchase);
-                    }
-
-                    echo "<table class='invoice-table'>";
-                    echo "<tr class='row-bottom-border'>";
-                    echo "<td class='item-header-column'>Item</td>";
-                    echo "<td class='qty-header-column'>Qty</td>";
-                    echo "<td class='cost-header-column'>Unit Cost</td>";
-                    echo "</tr>";
-
-                    foreach ($purchases as $purchase)
-                    {
-                        echo "<tr>";
-                        echo "<td class='item-column'>" . $purchase["item"] . "</td>";
-                        echo "<td class='qty-column'>" . $purchase["qty"] . "</td>";
-                        echo "<td class='cost-column'>" . $purchase["cost"] . "</td>";
-                        echo "</tr>";
-                    }
-
-                    $totalCost = array_reduce($purchases, function ($sum, $current) {
-                        return $sum += ($current["qty"] * $current["cost"]);
-                    }, 0);
-
-                    echo "<tr class='row-top-border'>";
-                    echo "<td class='item-column'></td>";
-                    echo "<td class='qty-column'>Total</td>";
-                    echo "<td class='cost-column'>S$ $totalCost</td>";
-                    echo "</tr>";
-                    echo "</table>";
 
                     //print_r($purchases);
                 ?>

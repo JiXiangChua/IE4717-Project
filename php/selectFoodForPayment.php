@@ -4,6 +4,10 @@
 <?php
 include "connectDB.php";
 
+if(!isset($_SESSION['selectedFood'])){
+    $_SESSION['selectedFood'] = array();
+}
+
 $food_order = array();
 for($i=0; $i<8; $i++){
     $foodid = $i+1; 
@@ -47,5 +51,7 @@ for($i=0;$i<8;$i++){
 
 }
 
+$_SESSION["selectedFood"] = $display_food;
 
+// print_r($_SESSION["selectedFood"]);
 ?>
