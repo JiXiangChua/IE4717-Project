@@ -25,7 +25,7 @@
 
             <div class="form">
 
-                <p class="text">The trascation number you entered is not existed.<p>
+                <p class="text">The transcation number you entered is not existed.<p>
                 <form method="post" action="bookingDetails.php">
 
                     <div class="input">
