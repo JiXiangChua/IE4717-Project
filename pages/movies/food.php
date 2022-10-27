@@ -6,7 +6,9 @@
         $selectedSeatsArray = explode('-', $selectedSeatsString);
         $_SESSION['selectedSeats'] = $selectedSeatsArray;
     }
-    
+    if (isset($_SESSION['selectedFood'])) {
+        unset($_SESSION['selectedFood']);
+    }
 
 ?>
 

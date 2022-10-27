@@ -89,10 +89,20 @@ function gneeratePurchaseTableForEmail() {
     $ticketsPurchase = array();
     $ticketsPurchase["item"] = "Standard Movie Ticket";
     $ticketsPurchase["qty"] = count($_SESSION['selectedSeats']);
-    $ticketsPurchase["cost"] = 10;
+    $ticketsPurchase["cost"] = number_format(10, 2);
 
     //Push all the user purchases into the purchases array
     array_push($purchases, $ticketsPurchase);
+
+    $display_food = $_SESSION["selectedFood"];
+
+    $foodPurchase = array();
+    for($i=0;$i<count($display_food);$i++){
+        $foodPurchase["item"] = $display_food[$i]["title"];
+        $foodPurchase["qty"] = $display_food[$i]["quantity"];
+        $foodPurchase["cost"] = $display_food[$i]["price"];
+        array_push($purchases, $foodPurchase);
+    }
 
     $outputHtml .= "<table class='invoice-table'>";
     $outputHtml .= "<tr class='row-bottom-border'>";
@@ -117,7 +127,7 @@ function gneeratePurchaseTableForEmail() {
     $outputHtml .= "<tr class='row-top-border'>";
     $outputHtml .= "<td class='item-column'></td>";
     $outputHtml .= "<td class='qty-column'>Total</td>";
-    $outputHtml .= "<td class='cost-column'>S$ $totalCost</td>";
+    $outputHtml .= "<td class='cost-column'>S$ ".number_format($totalCost, 2)."</td>";
     $outputHtml .= "</tr>";
     $outputHtml .= "</table>";
 
