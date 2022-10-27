@@ -28,6 +28,13 @@ body{
     color: white;
     font-size: 30px;
     padding-left: 20px;
+
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .search_input:focus{

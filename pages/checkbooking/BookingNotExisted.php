@@ -30,7 +30,8 @@
 
                     <div class="input">
                         <input type="text" class="search_input" id="transaction_number" placeholder="Transcation Number"
-                            name="transaction_number">
+                            name="transaction_number" oninput="this.value = 
+                            !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" step="1">
 
                     </div>
 
