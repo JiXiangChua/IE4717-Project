@@ -225,7 +225,8 @@ tr:nth-last-child(2) td {
   height: 50px;
   text-align: center;
   color: #ffffff;
-  font-size: 20px;
+  font-size: 24px;
+  padding: 15px 0px;
 }
 
 .item-column {

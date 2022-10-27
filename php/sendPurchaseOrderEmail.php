@@ -243,7 +243,7 @@ tr:nth-last-child(2) td {
     </div>
 </div>
 <div class='purchase-container'>
-    <h2>Your Order Details:</h2>";
+    <h2>Your Order Summary:</h2>";
 
 $email_content .= gneeratePurchaseTableForEmail();
 
