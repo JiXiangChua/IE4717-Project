@@ -152,10 +152,10 @@ include "../../php/selectForBookingDetails.php";
                             ?>
                              hidden>
 
-                             <input type="number" name= "sessionid" value = <?php
+                             <input type="number" name= "sessionid" hidden value = <?php
                                 echo $session[0]["sessionid"];
                             ?>
-                             hidden>
+                             >
 
                             
 
