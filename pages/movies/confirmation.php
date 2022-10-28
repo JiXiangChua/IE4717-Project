@@ -13,7 +13,7 @@
     //Destroy session at the end of php:
     session_destroy();
     $sessionId = session_id() == "" ? "NULL" : session_id();
-    echo "<script>console.log('Session id after destoryed: ".$sessionId."')</script>";
+    echo "<script>console.log('Session id after destroyed: ".$sessionId."')</script>";
 ?>
 
 <html>

@@ -130,7 +130,6 @@ include('../../php/selectForPayment.php');
                     </div>
                 </form>
                 <div class="buttons-container">
-                    <!-- To remove this link later -->
                     <a href="../../pages/movies/food.php">
                         <button class="accent-button">Back</button>
                     </a>

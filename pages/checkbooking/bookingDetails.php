@@ -48,7 +48,7 @@ include "../../php/selectForBookingDetails.php";
                                     ?>
                                 </span>
                             </h2>
-                            <p>Trasaction Number:
+                            <p>Transaction Number:
                                 <span>
                                     <?php echo $order[0]["id"]; ?>
                                 </span>
@@ -156,12 +156,6 @@ include "../../php/selectForBookingDetails.php";
                                 echo $session[0]["sessionid"];
                             ?>
                              >
-
-                            
-
-                             
-                    
-
                     <div class="buttons-container">
                         <input type="submit" value="Edit" onclick="location.href='../checkbooking/editSeatSelection.php'"
                             class="accent-button"></input>

@@ -97,7 +97,7 @@ if (isset($_SESSION))
                     <img src="./images/pages/home/Cinema Seats.jpg">
                     <div class="cinema-hall-content-description">
                         <h3>Immersive, Enjoyable</h3>
-                        <p>Each theatre hall can accomdate up to 100 seats, designed by Figueras. Each seat is highly
+                        <p>Each theatre hall can accommodate up to 100 seats, designed by Figueras. Each seat is highly
                             comfortable with
                             generous dimensions. There is sufficient legroom between each row of
                             seats, allowing you to view your movie in a more comfortable and relaxed position.
