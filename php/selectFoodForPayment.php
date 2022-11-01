@@ -27,36 +27,38 @@ if (count($_SESSION['selectedFood']) == 0)
 
     $food_order_filtered = array_filter($food_order, function ($var)
     {
-        return $var["quantity"] !== "0";
+        return $var["quantity"] != 0;
     });
-
 
     //print_r($food_order_filtered);
 
     $display_food = array();
 
-    for ($i = 0; $i < 8; $i++)
+    if (count($food_order_filtered) > 0)
     {
-
-        $sql_food = 'SELECT * FROM food where foodid = "' . $food_order_filtered[$i]["foodid"] . '" ';
-        $result = $db->query($sql_food);
-
-        if ($result->num_rows > 0)
+        for ($i = 0; $i < 8; $i++)
         {
-            // output data of each row
-            $display = array();
-            while ($row = $result->fetch_assoc())
+
+            $sql_food = 'SELECT * FROM food where foodid = "' . $food_order_filtered[$i]["foodid"] . '" ';
+            $result = $db->query($sql_food);
+
+            if ($result->num_rows > 0)
             {
+                // output data of each row
+                $display = array();
+                while ($row = $result->fetch_assoc())
+                {
 
-                $display["foodid"] = $row["foodid"];
-                $display["title"] = $row["foodName"];
-                $display["price"] = $row["price"];
-                $display["image"] = $row["imagePath"];
-                $display["quantity"] = $food_order_filtered[$i]["quantity"];
-                array_push($display_food, $display);
+                    $display["foodid"] = $row["foodid"];
+                    $display["title"] = $row["foodName"];
+                    $display["price"] = $row["price"];
+                    $display["image"] = $row["imagePath"];
+                    $display["quantity"] = $food_order_filtered[$i]["quantity"];
+                    array_push($display_food, $display);
+                }
             }
-        }
 
+        }
     }
 
     $_SESSION["selectedFood"] = $display_food;
