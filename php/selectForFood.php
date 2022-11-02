@@ -18,7 +18,7 @@ if ($result_food->num_rows > 0) {
       $foodDetails["title"] = $row["foodName"];
       $foodDetails["price"] = $row["price"];
       $foodDetails["image"] = $row["imagePath"];
-      echo "<script>console.log(" .$foodDetails["id"]. "); </script>";
+      // echo "<script>console.log(" .$foodDetails["id"]. "); </script>";
       array_push($food, $foodDetails);
     }
 }
