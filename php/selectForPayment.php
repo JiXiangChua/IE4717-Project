@@ -37,7 +37,7 @@ function generatePurchaseTable()
     $ticketsPurchase = array();
     $ticketsPurchase["item"] = "Standard Movie Ticket";
     $ticketsPurchase["qty"] = count($_SESSION['selectedSeats']);
-    $ticketsPurchase["cost"] = number_format(10, 2);
+    $ticketsPurchase["cost"] = number_format(10*$ticketsPurchase["qty"], 2);
 
     //Push all the user purchases into the purchases array
     array_push($purchases, $ticketsPurchase);
@@ -48,7 +48,7 @@ function generatePurchaseTable()
     for($i=0;$i<count($display_food);$i++){
         $foodPurchase["item"] = $display_food[$i]["title"];
         $foodPurchase["qty"] = $display_food[$i]["quantity"];
-        $foodPurchase["cost"] = $display_food[$i]["price"];
+        $foodPurchase["cost"] = number_format($display_food[$i]["price"] * $foodPurchase["qty"], 2);
         array_push($purchases, $foodPurchase);
     }
 
@@ -57,7 +57,7 @@ function generatePurchaseTable()
     echo "<tr class='row-bottom-border'>";
     echo "<td class='item-header-column'>Item</td>";
     echo "<td class='qty-header-column'>Qty</td>";
-    echo "<td class='cost-header-column'>Unit Cost</td>";
+    echo "<td class='cost-header-column'>Cost</td>";
     echo "</tr>";
 
     foreach ($purchases as $purchase)
@@ -70,7 +70,7 @@ function generatePurchaseTable()
     }
 
     $totalCost = array_reduce($purchases, function ($sum, $current) {
-        return $sum += ($current["qty"] * $current["cost"]);
+        return $sum += $current["cost"];
     }, 0);
 
     echo "<tr class='row-top-border'>";
@@ -89,7 +89,7 @@ function gneeratePurchaseTableForEmail() {
     $ticketsPurchase = array();
     $ticketsPurchase["item"] = "Standard Movie Ticket";
     $ticketsPurchase["qty"] = count($_SESSION['selectedSeats']);
-    $ticketsPurchase["cost"] = number_format(10, 2);
+    $ticketsPurchase["cost"] = number_format(10*$ticketsPurchase["qty"], 2);
 
     //Push all the user purchases into the purchases array
     array_push($purchases, $ticketsPurchase);
@@ -100,7 +100,7 @@ function gneeratePurchaseTableForEmail() {
     for($i=0;$i<count($display_food);$i++){
         $foodPurchase["item"] = $display_food[$i]["title"];
         $foodPurchase["qty"] = $display_food[$i]["quantity"];
-        $foodPurchase["cost"] = $display_food[$i]["price"];
+        $foodPurchase["cost"] = number_format($display_food[$i]["price"] * $foodPurchase["qty"], 2);
         array_push($purchases, $foodPurchase);
     }
 
@@ -108,7 +108,7 @@ function gneeratePurchaseTableForEmail() {
     $outputHtml .= "<tr class='row-bottom-border'>";
     $outputHtml .= "<td class='item-header-column'>Item</td>";
     $outputHtml .= "<td class='qty-header-column'>Qty</td>";
-    $outputHtml .= "<td class='cost-header-column'>Unit Cost</td>";
+    $outputHtml .= "<td class='cost-header-column'>Cost</td>";
     $outputHtml .= "</tr>";
 
     foreach ($purchases as $purchase)
@@ -121,7 +121,7 @@ function gneeratePurchaseTableForEmail() {
     }
 
     $totalCost = array_reduce($purchases, function ($sum, $current) {
-        return $sum += ($current["qty"] * $current["cost"]);
+        return $sum += $current["cost"];
     }, 0);
 
     $outputHtml .= "<tr class='row-top-border'>";
