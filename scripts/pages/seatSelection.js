@@ -4,11 +4,6 @@ const count = document.getElementById("count");
 const selectSeatsList = document.getElementById("selected-seats");
 const nextButton = document.getElementById("next-button");
 
-// const { title } = JSON.parse(sessionStorage.getItem("movieDetailsPage"))[0];
-// const [, selectedDate, selectedTime] = JSON.parse(
-//   sessionStorage.getItem("selectedSession")
-// );
-
 var updatedSelectedSeatList = [];
 
 var occupiedSeats = [
@@ -72,8 +67,6 @@ const updateSelectedCount = () => {
 
 //restore user previously selected seats
 const renderPreviousSelectedSeats = () => {
-  // const selectedSeats = JSON.parse(sessionStorage.getItem("selectedSeats"));
-
   if (selectedSeats !== null && selectedSeats.length > 0) {
     seats.forEach((seat) => {
       if (selectedSeats.includes(seat.getAttribute("data-value"))) {
@@ -99,12 +92,6 @@ seatPlanContainer.addEventListener("click", (event) => {
 });
 
 nextButton.addEventListener("click", () => {
-  //save user seat selection:
-  // sessionStorage.setItem(
-  //   "selectedSeats",
-  //   JSON.stringify(updatedSelectedSeatList)
-  // );
-
   //navigate to food page
   window.location.href = "./food.html";
 });

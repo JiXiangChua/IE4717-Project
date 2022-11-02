@@ -26,7 +26,6 @@ include('../../php/readSelectedMovieForMovieDetails.php');
         </nav>
         <div class="container">
             <div id="detail-container">
-                <!-- Render HTML components from javascript. Below is a skeleton of the movie info -->
                 <?php
                 echo "<div class='movie-poster'>";
                 echo "<img src='../../images/pages/movies/" . $selectedMovie["imagePathForMovieDetails"] . "' alt='" . $selectedMovie["title"] . "'>";

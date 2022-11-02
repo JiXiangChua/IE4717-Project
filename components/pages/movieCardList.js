@@ -58,11 +58,6 @@ function movieSelected() {
       const movie_details_payload = [movie_details];
       //based on the movie id to retrieve the movie details from the array
 
-      sessionStorage.setItem(
-        "movieDetailsPage",
-        JSON.stringify(movie_details_payload)
-      );
-
       console.log(movie_details_payload);
       window.location.href = "movieDetails.html";
     });

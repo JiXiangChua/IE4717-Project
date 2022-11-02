@@ -1,9 +1,3 @@
-const movie = JSON.parse(sessionStorage.getItem("movieDetailsPage"))[0];
-const [selectedLocation, selectedDate, selectedTime] = JSON.parse(
-  sessionStorage.getItem("selectedSession")
-);
-const selectedSeats = JSON.parse(sessionStorage.getItem("selectedSeats"));
-
 const renderMovieTicketDetails = () => {
   const title = document.getElementById("movie-title");
   const location = document.getElementById("cinema-location");

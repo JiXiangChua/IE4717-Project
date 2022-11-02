@@ -31,7 +31,7 @@ include('../../php/selectForPayment.php');
                 <h2>Ticket</h2>
                 <div class="ticket-detail-container">
                     <?php 
-                        echo "<img id='movie-poster' src='../../images/pages/movies/".$imagePath."' alt='1917'>";
+                        echo "<img id='movie-poster' src='../../images/pages/movies/".$imagePath."' alt='".$imagePath."'>";
                     ?>
                     <div id="e-ticket">
                         <!-- e-ticket image -->
@@ -93,9 +93,6 @@ include('../../php/selectForPayment.php');
                 <div id="table-container"></div>
                 <?php 
                     generatePurchaseTable();
-
-
-                    //print_r($purchases);
                 ?>
             </div>
             <div class="payment-container">

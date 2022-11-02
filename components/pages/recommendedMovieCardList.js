@@ -22,10 +22,6 @@ const navigate = (id) => {
   const destinationPayload = recommendedMovies.filter(
     (movie) => movie.id == id
   );
-  sessionStorage.setItem(
-    "movieDetailsPage",
-    JSON.stringify(destinationPayload)
-  );
   window.location.href = "./pages/movies/movieDetails.html";
 };
 

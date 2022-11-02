@@ -2,10 +2,6 @@ import { availableMovies } from "../../utils/Constants.js";
 
 var detailContainer = document.getElementById("detail-container");
 
-const payloadFromPreviousPage = JSON.parse(
-  sessionStorage.getItem("movieDetailsPage")
-);
-
 const tempSelectedMovie = availableMovies.filter(
   (movie) => movie.id === payloadFromPreviousPage[0].id
 )[0]; //returns the selected movie javascript object details

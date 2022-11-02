@@ -66,7 +66,6 @@
             <p>&copy; COPYRIGHT 2022 IE4717 F38-DG05 | CHUA JI XIANG | TANG ZHAO SHENG </p>
         </footer>
     </div>
-    <script src="../../scripts/pages/confirmation.js"></script>
 </body>
 
 </html>

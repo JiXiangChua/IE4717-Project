@@ -25,9 +25,9 @@ var timeslot = [
   },
 ];
 
-const onPageLoad = () => {
-  sessionStorage.removeItem("selectedSession");
-};
+// const onPageLoad = () => {
+//   sessionStorage.removeItem("selectedSession");
+// };
 
 const renderTimeslotCardList = () => {
   timeslotCardList.innerHTML = timeslot
@@ -111,10 +111,6 @@ const navigate = (location, date, time) => {
   if (!date) {
     alert("Please select a date from one of the locations listed.");
   } else {
-    sessionStorage.setItem(
-      "selectedSession",
-      JSON.stringify([location, date, time])
-    );
     window.location.href = `../../pages/movies/seatSelection.php?location=${location}&date=${date}&time=${time}`; //pass selected date&time as url
   }
 };
@@ -134,7 +130,7 @@ const addEventListenerToTimeslots = () => {
   });
 };
 
-onPageLoad();
+// onPageLoad();
 renderTimeslotCardList();
 renderAvailableTimeSlot();
 renderAvailableDates();
