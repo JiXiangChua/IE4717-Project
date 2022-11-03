@@ -13,7 +13,7 @@
         <nav class="nav-container">
             <img id="cineverse-logo" src="../../images/icons/cineverse_logo.png" alt="cineverse_logo">
             <div class="nav-items">
-                <a class="active" href="../../index.html">Home</a>
+                <a class="active" href="../../index.php">Home</a>
                 <a href="../movies/movies.php">Movies</a>
                 <a href="../cinemas/cinema.html">Cinemas</a>
                 <a href="../promotions/promotion.html">Promotions</a>

@@ -28,7 +28,7 @@ const validateCardNumber = (event) => {
 
   if (index != 0) {
     alert(
-      "You have entered an invalid credit card number. \nPlease verify again."
+      "You have entered an invalid credit card number. Credit card number should contain 16 digits. \nPlease verify again."
     );
     event.target.select();
     return false;
@@ -42,7 +42,9 @@ const validateExpiryDate = (event) => {
   );
   var dateSelected = new Date(event.target.value);
   if (expiryDate3Months > dateSelected) {
-    alert("Your card must not have an expiry date less than 3 months.");
+    alert(
+      "Your card must not have an expiry date less than 3 months. \nPlease verify again."
+    );
     event.target.value = ""; //reset the date
     event.target.focus();
   }
@@ -55,7 +57,9 @@ const validateCvcNumber = (event) => {
   var index = cvc.search(validateExp);
 
   if (index != 0) {
-    alert("You have entered an invalid CVC number. \nPlease verify again.");
+    alert(
+      "You have entered an invalid CVC number. CVC number should contain 3 digits. \nPlease verify again."
+    );
     event.target.select();
   }
 };
@@ -67,7 +71,9 @@ const validateEmail = (event) => {
   var index = email.search(validateExp);
 
   if (index != 0) {
-    alert("You have entered an invalid email. Please verify again.");
+    alert(
+      "You have entered an invalid email. The username should contain characters, '-' or '.' \n Followed by '@' and a domain name consisting two to four address extensions. \nPlease verify again."
+    );
     event.target.select();
   }
 };
