@@ -69,7 +69,7 @@ include "../../php/selectForBookingDetails.php";
                                 <th class="third_column">Cost</th>
                             </tr>
                             <tr>
-                                <td>Standard Week Day Ticket</td>
+                                <td>Standard Movie Ticket</td>
                                 <td>
                                 <?php
                                     echo count($session);
